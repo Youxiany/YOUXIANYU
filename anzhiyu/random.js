@@ -1,3 +1,3 @@
-var posts=["2024/01/23/FydeOS17国产操作系统全过程安装/","2024/01/14/HarmonyOS4.0应用开发【学习笔记3：安装DevEco Studio开发环境】/","2017/05/27/Python Socket TCP简单通信【二】/","2024/01/01/Python Socket TCP多线程通信【四】/","2024/01/14/Typora编辑器 - 序列号破解/","2024/01/14/hello-world/","2024/01/23/我的个人博客发布成功啦/","2024/01/14/文章添加标签，封面，标题，日期（Hexo）/"];function toRandomPost(){
+var posts=["2024/01/23/FydeOS17国产操作系统全过程安装/","2024/01/14/HarmonyOS4.0应用开发【学习笔记3：安装DevEco Studio开发环境】/","2024/01/01/Python Socket TCP多线程通信【四】/","2017/05/27/Python Socket TCP简单通信【二】/","2024/01/14/Typora编辑器 - 序列号破解/","2024/01/14/hello-world/","2024/01/23/我的个人博客发布成功啦/","2024/01/14/文章添加标签，封面，标题，日期（Hexo）/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
