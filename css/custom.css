@@ -214,3 +214,12 @@
     }
 }
 
+#page-header #site-title
+{
+    -webkit-animation: shine 2.4s infinite;/*设置动画*/
+}
+
+@-webkit-keyframes shine{/*创建动画*/
+    0%,100%{ color:#fff;text-shadow:0 0 10px #88d2df,0 0 10px #8df5d6; }
+    50%{ text-shadow:0 0 10px #e668de,0 0 40px #e67171; }
+}
