@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>素材补帧、4k</title>
+      <link href="/2024/11/04/%E7%B4%A0%E6%9D%90%E8%A1%A5%E5%B8%A7%EF%BC%8C4k/"/>
+      <url>/2024/11/04/%E7%B4%A0%E6%9D%90%E8%A1%A5%E5%B8%A7%EF%BC%8C4k/</url>
+      
+        <content type="html"><![CDATA[<h1 id="给素材补帧让视频变得丝滑"><a href="#给素材补帧让视频变得丝滑" class="headerlink" title="给素材补帧让视频变得丝滑"></a>给素材补帧让视频变得丝滑</h1><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><blockquote><p>给视频补帧，先给视频进行抽帧在补帧效果更好，下面是操作步骤：</p></blockquote><p>1.将视频导入AE,抽帧就是以你要补帧的人物（主体）为第一要素，第一要素动了就裁剪一次：</p><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px">    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113429784298208&bvid=BV1uTDhYTEBV&cid=26627605593&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div>2.将视频用Me导出来（也是looked.ae下载），在进行补帧。<blockquote><p>1.我在这里分享两个好用的补帧软件，让你的视频丝滑无比。</p></blockquote><h2 id="第一个：Flowframes"><a href="#第一个：Flowframes" class="headerlink" title="第一个：Flowframes"></a>第一个：<font color="blue">Flowframes</font></h2><p>2.第一步打开flow,如图：↓<br><img src="/img%5Cflow.png"><br>3.点击Browse(Video)，选择要补帧的片段，在选择你要补的帧数按interpolate开始补帧。</p><h2 id="第二个：SVFI"><a href="#第二个：SVFI" class="headerlink" title="第二个：SVFI"></a>第二个：<font color="blue">SVFI</font></h2><p>1.这个补帧软件是我用过最好的，唯一的缺点就是要钱但只补帧的话只需买社区服43元（steam上面购买），这个软件还可以补4K、8k、超分。（但要买专业版328）<br>我这有平替，他就是：<font size="5">VideoAIportable</font></p><h2 id="第二个：SVFI-1"><a href="#第二个：SVFI-1" class="headerlink" title="第二个：SVFI"></a>第二个：<font color="blue">SVFI</font></h2><p>1.这个补帧软件是我用过最好的，唯一的缺点就是要钱但只补帧的话只需买社区服43元（steam上面购买），这个软件还可以补4K、8k、超分。（但要买专业版328）<br>我这有平替，他就是：<font size="5">Topaz VideoAIportable</font></p><p>2.先用SVFI进行补帧。打开SVFI的高级设置先进行调试，可以参考我的来：<br>一.<img src="/img%5Cyouxin%5Csvfi.png"><br>二.<img src="/img%5Cyouxin%5Csvfi1.png"><br>三.<img src="/img%5Cyouxin%5Csvfi2.png"><br>四.<img src="/img%5Cyouxin%5Csvfi3.png"></p><h2 id="视频补4K"><a href="#视频补4K" class="headerlink" title="视频补4K"></a>视频补4K</h2><p>没有 <font size="4">Topaz VideoAIportable</font> 的在looke.ae也可以下载的。</p><p>1.打开<font size="4">Topaz VideoAIportable</font>导入素材可以按照我这样设置：<br><img src="/img%5Cyouxin%5CTopaz.png"><br><font size="4">请看对比</font></p><p><img src="/img%5Cyouxin%5CTopaz1.png"><br>2.导出即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> AE </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AE素材获取</title>
       <link href="/2024/10/30/AE%E7%B4%A0%E6%9D%90%E6%8F%90%E7%BA%AF/"/>
       <url>/2024/10/30/AE%E7%B4%A0%E6%9D%90%E6%8F%90%E7%BA%AF/</url>
