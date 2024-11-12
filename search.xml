@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>for语句学习笔记</title>
+      <link href="/2024/11/12/for%E8%AF%AD%E5%8F%A5/"/>
+      <url>/2024/11/12/for%E8%AF%AD%E5%8F%A5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="for循环笔记"><a href="#for循环笔记" class="headerlink" title="for循环笔记"></a><font size="8">for循环笔记</font></h1><blockquote><p>for(初始化；条件表达式；增量表达式)<br>{  &#x2F;&#x2F;循环体<br>}</p></blockquote><p><b><font size="5">1.fot循环的基本结构</font></b></p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><b><font size="5">2.fot语句的元素</font></b></p><blockquote><p>“初始化表达式”部分仅在进入循环前执行一次。 通常，在该部分中声明并初始化局部循环变量。 不能从 for 语句外部访问声明的变量。</p></blockquote><p>上例中的“初始化表达式”部分声明并初始化整数计数器变量：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> i = <span class="number">0</span></span><br></pre></td></tr></table></figure><blockquote><p>“条件”部分确定是否应执行循环中的下一个迭代。 如果计算结果为 true 或不存在，则执行下一个迭代；否则退出循环。 “条件”部分必须为布尔表达式。</p></blockquote><p>上例中的“条件”条件部分检查计数器值是否小于 10：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i&lt;<span class="number">10</span></span><br></pre></td></tr></table></figure><blockquote><p>“迭代器”部分定义循环主体的每次执行后将执行的操作。</p></blockquote><p>上例中的“迭代器”部分增加计数器：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i++</span><br></pre></td></tr></table></figure><blockquote><p>循环体，必须是一个语句或一个语句块。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> C# </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>while循环语句</title>
       <link href="/2024/11/10/while%E8%AF%AD%E5%8F%A5/"/>
       <url>/2024/11/10/while%E8%AF%AD%E5%8F%A5/</url>
