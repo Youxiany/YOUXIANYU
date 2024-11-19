@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>变量的作用域</title>
+      <link href="/2024/11/19/%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+      <url>/2024/11/19/%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="C-变量里的作用域"><a href="#C-变量里的作用域" class="headerlink" title="C#变量里的作用域"></a><font size="8">C#变量里的作用域</font></b></h1><p><font size="6">一.什么是作用域</font></b></p><blockquote><p>作用域（Scope）是编程中的一个基本概念，它定义了代码中变量、函数、类等实体的可见性和生命周期。作用域决定了在程序的哪些部分可以访问或修改这些实体。</p></blockquote><p><font size="6">二.C#变量作用域中一些关键点</font></b></p><p>1.局部作用域是指在编程中，变量或函数仅在定义它们的特定代码块或区域内可见和可访问的作用域。这种作用域通常与局部变量和局部函数相关联，它们只在创建它们的函数、方法或代码块内部有效。以下是局部作用域的一些关键特点：</p><p>定义位置：局部变量或函数通常在函数、方法或代码块内部定义。</p><p>可见性：局部变量或函数只在定义它们的函数、方法或代码块内部可见。一旦代码执行离开了这个区域，局部变量或函数就不再可访问。</p><p>生命周期：局部变量的生命周期通常与定义它们的函数或代码块的执行周期相同。当函数或代码块执行结束时，局部变量会被销毁，占用的内存会被释放。</p><p>初始化：在某些编程语言中，局部变量在使用前必须被初始化，否则可能会引发错误或警告。</p><p>同名变量：在不同的函数或代码块中可以定义同名的局部变量，它们是独立的，互不影响。</p><p>参数传递：当函数或方法被调用时，实参的值会被复制到对应的局部变量（形参）中，局部变量的修改不会影响实参的值，除非使用了引用传递或指针。</p><p>作用域链：在支持闭包的语言中，局部变量可以被嵌套函数访问，形成作用域链。</p><p>重用性：局部变量的名称可以在不同的函数或代码块中重复使用，因为它们的作用域是独立的。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Main方法开始执行&quot;</span>);</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 定义一个局部变量</span></span><br><span class="line">            <span class="built_in">int</span> localVar = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// localVar仅在这个代码块内部可见</span></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;局部变量的值: &quot;</span> + localVar);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在这个点，localVar不再存在，因为它的作用域已经结束</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2.在C#中，全局作用域的概念与传统的全局变量有所不同。C#是一种面向对象的编程语言，它鼓励封装和模块化，因此并不直接支持传统意义上的全局变量。然而，可以通过以下几种方式来实现全局可访问的数据：</p><blockquote><p>静态成员变量和静态属性：<br>在C#中，可以通过静态类和静态成员来模拟全局变量的效果。静态成员属于类本身，而不是类的任何特定实例。</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">csharp</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">Global</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> GlobalValue = <span class="number">42</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在程序的任何地方都可以这样访问</span></span><br><span class="line"><span class="built_in">int</span> <span class="keyword">value</span> = Global.GlobalValue;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Csharp </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>for语句学习笔记</title>
       <link href="/2024/11/12/for%E8%AF%AD%E5%8F%A5/"/>
       <url>/2024/11/12/for%E8%AF%AD%E5%8F%A5/</url>
@@ -13,7 +34,7 @@
       
       <categories>
           
-          <category> Cspace </category>
+          <category> Csharp </category>
           
           <category> Visual Studio 2022 </category>
           
@@ -34,7 +55,7 @@
       
       <categories>
           
-          <category> Cspace </category>
+          <category> Csharp </category>
           
           <category> Visual Studio 2022 </category>
           
@@ -147,7 +168,7 @@
       
       <categories>
           
-          <category> Cspace </category>
+          <category> Csharp </category>
           
       </categories>
       
