@@ -2,10 +2,10 @@
 {
     background-color: transparent;
 }
-#page-header.nav-fixed #nav
+/* #page-header.nav-fixed #nav
 {
-    border-radius: 10px;
-}
+    border-radius: 10px;\\\\\
+} */
 /*文章标题图标大小*/
 #content-inner.layout h1::before {
     color: #ef50a8 ;
