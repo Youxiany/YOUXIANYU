@@ -5,6 +5,35 @@
     
     <entry>
       <title>Csharp认识新的类Random</title>
+      <link href="/2024/11/26/csharp%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2024/11/26/csharp%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Csharp学习笔记基本数据类型：整型"><a href="#Csharp学习笔记基本数据类型：整型" class="headerlink" title="Csharp学习笔记基本数据类型：整型"></a>Csharp学习笔记基本数据类型：整型</h1><blockquote><p>整型数值类型 表示整数。 所有的整型数值类型均为值类型。 它们还是简单类型，可以使用文本进行初始化。 所有整型数值类型都支持算术、位逻辑、比较和相等运算符。</p></blockquote><p>1.C# 支持以下预定义整型类型：<br><img src="/img%5Czhengxing.png"></p><h2 id="在C-中，整数数据类型分为有符号和无符号两种，它们的主要区别在于值的范围和是否包含负数。"><a href="#在C-中，整数数据类型分为有符号和无符号两种，它们的主要区别在于值的范围和是否包含负数。" class="headerlink" title="在C#中，整数数据类型分为有符号和无符号两种，它们的主要区别在于值的范围和是否包含负数。"></a>在C#中，整数数据类型分为有符号和无符号两种，它们的主要区别在于值的范围和是否包含负数。</h2><p>1.有符号整数（Signed Integers）：</p><blockquote><p>可以表示正数、负数和零。<br>常见的有符号整数类型包括：<br>sbyte：8位有符号整数，范围从 -128 到 127。<br>short：16位有符号整数，范围从 -32,768 到 32,767。<br>int：32位有符号整数，范围从 -2,147,483,648 到 2,147,483,647。<br>long：64位有符号整数，范围从 -9,223,372,036,854,775,808 到 9,223,372,036,854,775,807。</p></blockquote><p>2.无符号整数（Unsigned Integers）：</p><blockquote><p>只能表示正数和零，不能表示负数。<br>常见的无符号整数类型包括：<br>byte：8位无符号整数，范围从 0 到 255。<br>ushort：16位无符号整数，范围从 0 到 65,535。<br>uint：32位无符号整数，范围从 0 到 4,294,967,295。<br>ulong：64位无符号整数，范围从 0 到 18,446,744,073,709,551,615。</p></blockquote><p>3.区别：</p><blockquote><p>值的范围：无符号整数类型的值范围从0开始，而有符号整数类型的值范围则包括负数。<br>内存占用：相同位数的有符号和无符号整数占用的内存大小是相同的，但是无符号整数可以表示更大的正数值。<br>溢出行为：当整数运算结果超出其类型所能表示的范围时，会发生溢出。有符号整数溢出时可能会变成一个负数，而无符号整数溢出时会从0开始循环。<br>默认值：有符号整数类型的默认值是0，而无符号整数类型的默认值也是0。<br>使用场景：有符号整数通常用于需要表示正负值的场景，而无符号整数通常用于计数器、索引、数组长度等只能取非负值的场景。<br>在实际编程中，选择使用有符号还是无符号整数类型，应根据具体的应用场景和需求来决定。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Csharp </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Csharp </tag>
+            
+            <tag> Visual Studio 2022 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Csharp认识新的类Random</title>
       <link href="/2024/11/26/%E8%AE%A4%E8%AF%86%E6%96%B0%E7%9A%84%E7%B1%BBRandom/"/>
       <url>/2024/11/26/%E8%AE%A4%E8%AF%86%E6%96%B0%E7%9A%84%E7%B1%BBRandom/</url>
       
