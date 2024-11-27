@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Csharp基本数据类型—浮点型，类型转换学习笔记</title>
+      <link href="/2024/11/27/csharp%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B2/"/>
+      <url>/2024/11/27/csharp%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Csharp基本数据类型：浮点型"><a href="#Csharp基本数据类型：浮点型" class="headerlink" title="Csharp基本数据类型：浮点型"></a>Csharp基本数据类型：浮点型</h1><blockquote><p>浮点数值类型表示实数。 所有浮点型数值类型均为值类型。 它们还是简单类型，可以使用文本进行初始化。 所有浮点数值类型都支持算术、比较和相等运算符。</p></blockquote><h2 id="浮点类型的特征"><a href="#浮点类型的特征" class="headerlink" title="浮点类型的特征"></a>浮点类型的特征</h2><p><img src="/img%5Cfudianxing.png"></p><p>1.浮点数在计算机中是以IEEE 754标准来存储的，这意味着它们可以表示非常大或非常小的数，并且可以表示非整数。</p><p>2.以下是一些关于C#浮点型的重要点：</p><blockquote><p>浮点数的精度是有限的，因此在进行浮点数运算时可能会出现精度损失。<br>浮点数可以表示正数、负数和零。<br>浮点数也可以表示特殊值，如正无穷(double.PositiveInfinity)、负无穷(double.NegativeInfinity)和NaN（不是一个数字，double.NaN）。<br>在比较浮点数时，应该使用一定的容差来判断两个数是否“相等”，因为直接比较可能会因为精度问题导致不准确的结果。<br>浮点数的舍入模式可以通过Math.Round方法或者MidpointRounding枚举来控制。<br>使用浮点型时，需要考虑到这些特性和限制，以确保程序的正确性和健壮性。</p></blockquote><h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><p>1.在C#中，转义字符是一种特殊的字符序列，以反斜杠（\）开始，用来表示那些不能直接表示的字符或者具有特殊含义的字符。以下是一些常用的转义字符：</p><blockquote><p>1.换行符（\n）：插入一个新行。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;Hello,\nWorld!&quot;);</span><br></pre></td></tr></table></figure><blockquote><p>2.回车符（\r）：将光标移动到当前行的开头。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;Hello,\rWorld!&quot;);</span><br></pre></td></tr></table></figure><blockquote><p>3.制表符（\t）：插入一个水平制表符（Tab）。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;Hello,\tWorld!&quot;);</span><br></pre></td></tr></table></figure><blockquote><p>4.反斜杠（\）：表示一个实际的反斜杠字符。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string path = &quot;C:\\Program Files\\Example&quot;;</span><br></pre></td></tr></table></figure><blockquote><p>5.单引号（&#39;）：表示一个单引号字符。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string text = &quot;He&#x27;s the one.&quot;;</span><br></pre></td></tr></table></figure><blockquote><p>6.双引号（&quot;）：表示一个双引号字符。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string text = &quot;He said \&quot;Hello\&quot; to me.&quot;;</span><br></pre></td></tr></table></figure><blockquote><p>7.问号（?）：表示一个问号字符。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string text = &quot;What&#x27;s this?&quot;;</span><br></pre></td></tr></table></figure><blockquote><p>8.空字符（\0）：表示一个空字符（null character）。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string text = &quot;Hello\0World&quot;;</span><br></pre></td></tr></table></figure><blockquote><p>9.Unicode转义序列（\uXXXX 或 \UXXXXXXXX）：表示一个Unicode字符，其中XXXX是四位十六进制数，XXXXXXXX是八位十六进制数。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string text = &quot;\u00A9&quot;; // © symbol</span><br><span class="line">string text = &quot;\U0001F600&quot;; // 😀 emoji</span><br></pre></td></tr></table></figure><blockquote><p>10.八进制转义序列（\XXX）：表示一个ASCII字符，其中XXX是三位八进制数。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string text = &quot;\7&quot;; // 表示ASCII码为7的字符，即BEL（响铃）字符</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Csharp </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Csharp </tag>
+            
+            <tag> Visual Studio 2022 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Csharp基本数据类型—整型学习笔记</title>
       <link href="/2024/11/26/csharp%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
       <url>/2024/11/26/csharp%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
