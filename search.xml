@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Csharp字符串遍历编程题学习笔记</title>
+      <link href="/2024/12/01/csharp%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%81%8D%E5%8E%86%E7%BC%96%E7%A8%8B%E9%A2%98/"/>
+      <url>/2024/12/01/csharp%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%81%8D%E5%8E%86%E7%BC%96%E7%A8%8B%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Csharp字符串遍历编程题学习笔记"><a href="#Csharp字符串遍历编程题学习笔记" class="headerlink" title="Csharp字符串遍历编程题学习笔记"></a>Csharp字符串遍历编程题学习笔记</h1><p>1.输入n(n&lt;100)个数，找出其中最小的数，将它与最前面的数交换后输出这些数。</p><p>2.分析：</p><blockquote><p>1.先获取字符串（string str&#x3D;Console.ReadLine()）<br>2.字符串数组通过空格进行输入，使用string[] strArray&#x3D;str.Split(‘ ‘);<br>3.字符串转换整型,声明int[] intArray&#x3D;new int[strArray.Length];使用for循环转换赋值。<br>4.假设（索引)0最小int min&#x3D;intArray[0];那最小值和后面的索引进行比较，int一个变量进行存储最小值。<br>5.找到最小值和假设的进行位置交换，int一个临时变量进行存储（索引0），在把最小值放在（索引0）里面，然后再将临时变量放在最小值里面。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> str=Console.ReadLine();</span><br><span class="line">    <span class="built_in">string</span>[] strArray = str.Split(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">    <span class="built_in">int</span>[] intArray= <span class="keyword">new</span> <span class="built_in">int</span>[strArray.Length];</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; strArray.Length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> number=Convert.ToInt32(strArray[i]);</span><br><span class="line">        intArray[i] = number; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">int</span> min = intArray[<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">int</span> minIndex = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; intArray.Length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (intArray[i] &lt; min)</span><br><span class="line">        &#123;</span><br><span class="line">            min = intArray[i];</span><br><span class="line">            minIndex = i;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">int</span> temp=intArray[<span class="number">0</span>];</span><br><span class="line">    intArray[<span class="number">0</span>] = intArray[minIndex];</span><br><span class="line">    intArray[minIndex] = temp;</span><br><span class="line">    <span class="keyword">foreach</span>(<span class="built_in">int</span> t <span class="keyword">in</span> intArray)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.Write(t+<span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>3.输出结果：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="number">4</span> <span class="number">1</span> <span class="number">54</span> <span class="number">56</span> <span class="number">32</span> <span class="number">42</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">3</span> <span class="number">54</span> <span class="number">56</span> <span class="number">32</span> <span class="number">42</span> <span class="number">5</span></span><br></pre></td></tr></table></figure><h2 id="排序-系统方法"><a href="#排序-系统方法" class="headerlink" title="排序-系统方法"></a>排序-系统方法</h2><p>1.编写一个控制台程序，要求用户输入一组数字空格间隔，，对用户输入的数字从小到大输出。</p><p>2.分析：</p><blockquote><p>可以用系统方法做出来（Array.Sort）</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> str=Console.ReadLine();</span><br><span class="line">    <span class="built_in">string</span>[] strArray = str.Split(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">    <span class="built_in">int</span>[] intArray= <span class="keyword">new</span> <span class="built_in">int</span>[strArray.Length];</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; intArray.Length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> number=Convert.ToInt32(strArray[i]);</span><br><span class="line">        intArray[i]=number;</span><br><span class="line">    &#125;</span><br><span class="line">    Array.Sort(intArray);</span><br><span class="line">    <span class="keyword">foreach</span>(<span class="built_in">int</span> i <span class="keyword">in</span> intArray)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.Write(i+<span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3.输出结果：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">1</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span> <span class="number">6</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Csharp </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Csharp </tag>
+            
+            <tag> Visual Studio 2022 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Csharp编程题学习笔记</title>
       <link href="/2024/11/30/csharp%E7%BC%96%E7%A8%8B%E9%A2%983/"/>
       <url>/2024/11/30/csharp%E7%BC%96%E7%A8%8B%E9%A2%983/</url>
@@ -403,25 +432,6 @@
     
     
     <entry>
-      <title>日常</title>
-      <link href="/2024/10/30/YOUXIANDEYU/"/>
-      <url>/2024/10/30/YOUXIANDEYU/</url>
-      
-        <content type="html"><![CDATA[<h1 id="博主的随心日常"><a href="#博主的随心日常" class="headerlink" title="博主的随心日常"></a></b><em>博主的随心日常</em></b></h1><h2 id="2024年"><a href="#2024年" class="headerlink" title="2024年"></a>2024年</h2><h3 id="11月1日"><a href="#11月1日" class="headerlink" title="11月1日"></a>11月1日</h3><!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px">    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113316101884629&bvid=BV1TRmAYSE94&cid=26314608616&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div> --><blockquote><p>今天明日方舟更新5.5周年了（有没有和博主玩一样的游戏啊），攒了70抽开开心心上线抽卡，出了俩个金，歪了个叔叔潜能+1。给我出个没有的都好啊！<br>说说我对这游戏的评价吧，21年那会儿我是被同学带入坑的那时第一次接触这种类型的游戏感觉很好玩很新颖，后面也玩过很多这种类型的二游但还是明日方舟更好，尽管现在不怎么玩了。<br>可能是新鲜感过了吧。关卡出的没意思，抽卡一直是非酋。如今每天上线就是刷体力完成每日就下了。<br>现在唯一好玩的的就是它出的危机合约了。🥱🥱🥱</p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113407286052207&bvid=BV1NgSRYbEAQ&cid=26564363331&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div><blockquote><p>新出的塑心皮肤还是很好看的。喜欢😍😍😍</p></blockquote><p><img src="/img/youxin/%E5%A1%91%E5%BF%83.jpg"><br><img src="/img/youxin/%E5%A1%91%E5%BF%831.jpg"></p><h3 id="11月3日"><a href="#11月3日" class="headerlink" title="11月3日"></a>11月3日</h3><blockquote><p>看完CS,2024BLAST全球总决赛。<br>恭喜G2夺冠</p></blockquote><p><img src="/img/youxin/G2.jpg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日记 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>AE素材获取</title>
       <link href="/2024/10/30/AE%E7%B4%A0%E6%9D%90%E6%8F%90%E7%BA%AF/"/>
       <url>/2024/10/30/AE%E7%B4%A0%E6%9D%90%E6%8F%90%E7%BA%AF/</url>
@@ -443,6 +453,25 @@
             <tag> 迅雷 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日常</title>
+      <link href="/2024/10/30/YOUXIANDEYU/"/>
+      <url>/2024/10/30/YOUXIANDEYU/</url>
+      
+        <content type="html"><![CDATA[<h1 id="博主的随心日常"><a href="#博主的随心日常" class="headerlink" title="博主的随心日常"></a></b><em>博主的随心日常</em></b></h1><h2 id="2024年"><a href="#2024年" class="headerlink" title="2024年"></a>2024年</h2><h3 id="11月1日"><a href="#11月1日" class="headerlink" title="11月1日"></a>11月1日</h3><!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px">    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113316101884629&bvid=BV1TRmAYSE94&cid=26314608616&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div> --><blockquote><p>今天明日方舟更新5.5周年了（有没有和博主玩一样的游戏啊），攒了70抽开开心心上线抽卡，出了俩个金，歪了个叔叔潜能+1。给我出个没有的都好啊！<br>说说我对这游戏的评价吧，21年那会儿我是被同学带入坑的那时第一次接触这种类型的游戏感觉很好玩很新颖，后面也玩过很多这种类型的二游但还是明日方舟更好，尽管现在不怎么玩了。<br>可能是新鲜感过了吧。关卡出的没意思，抽卡一直是非酋。如今每天上线就是刷体力完成每日就下了。<br>现在唯一好玩的的就是它出的危机合约了。🥱🥱🥱</p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113407286052207&bvid=BV1NgSRYbEAQ&cid=26564363331&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div><blockquote><p>新出的塑心皮肤还是很好看的。喜欢😍😍😍</p></blockquote><p><img src="/img/youxin/%E5%A1%91%E5%BF%83.jpg"><br><img src="/img/youxin/%E5%A1%91%E5%BF%831.jpg"></p><h3 id="11月3日"><a href="#11月3日" class="headerlink" title="11月3日"></a>11月3日</h3><blockquote><p>看完CS,2024BLAST全球总决赛。<br>恭喜G2夺冠</p></blockquote><p><img src="/img/youxin/G2.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日记 </category>
+          
+      </categories>
+      
       
     </entry>
     
