@@ -4,13 +4,29 @@
   
     
     <entry>
-      <title></title>
+      <title>Csharp函数的重载学习笔记</title>
       <link href="/2024/12/12/csharp%E5%87%BD%E6%95%B0%E7%9A%84%E9%87%8D%E8%BD%BD/"/>
       <url>/2024/12/12/csharp%E5%87%BD%E6%95%B0%E7%9A%84%E9%87%8D%E8%BD%BD/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="Csharp函数的重载-Overload"><a href="#Csharp函数的重载-Overload" class="headerlink" title="Csharp函数的重载-Overload"></a>Csharp函数的重载-Overload</h1><p>1.在C#中，函数重载（Function Overloading）是指在同一个类中可以定义多个同名函数，只要它们的参数列表不同即可。参数列表不同可以是参数的类型不同、参数的数量不同，或者是两者都不同。函数重载使得函数名可以保持一致，同时能够根据传入的参数执行不同的操作。</p><p>2.以下是函数重载的几个要点：</p><blockquote><p>1.函数名相同：重载的函数必须在同一个类中，并且函数名相同。<br>2.参数列表不同：参数列表必须在数量或者类型上有所不同。<br>3.返回类型无关：函数的返回类型不影响重载，即使两个函数返回类型不同，只要参数列表相同，它们就不是重载。<br>4.访问修饰符无关：函数的访问修饰符（如public、private等）不影响重载。</p></blockquote><p>3.下面是一个简单的C#函数重载的例子：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MathOperations</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 重载函数，无参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Add</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重载函数，一个int参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Add</span>(<span class="params"><span class="built_in">int</span> a</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重载函数，两个int参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Add</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重载函数，一个double参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">double</span> <span class="title">Add</span>(<span class="params"><span class="built_in">double</span> a</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>在这个例子中，Add 函数被重载了四次，每次的参数列表都不同。这使得调用者可以根据需要传入不同数量或类型的参数，并执行相应的操作。</p></blockquote><blockquote><p>需要注意的是，C#编译器在调用函数时，会根据传入参数的类型和数量来决定调用哪个重载版本。如果存在多个匹配的重载版本，编译器将选择最具体的一个。如果没有匹配的重载版本，或者存在多个同样具体的版本，编译器将报错。</p></blockquote>]]></content>
       
       
+      <categories>
+          
+          <category> Csharp </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Csharp </tag>
+            
+            <tag> Visual Studio 2022 </tag>
+            
+        </tags>
       
     </entry>
     
