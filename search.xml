@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>学习CSS.4学习笔记</title>
+      <link href="/2025/01/18/css/%E5%AD%A6%E4%B9%A0css.4/"/>
+      <url>/2025/01/18/css/%E5%AD%A6%E4%B9%A0css.4/</url>
+      
+        <content type="html"><![CDATA[<h1 style="font-size:30px;color:#7DFFB5;font-family:华文楷体">CSS列表属性</h1><p><b>列表相关的属性，可以作用在<code>ul</code>、<code>ol</code>、<code>li</code>元素上。</b></p><table border="1">    <tr>        <th>CSS属性名</th>        <th>功能</th>        <th>属性值</th>    </tr>        <tr>            <th><code>tlst-style-type</code></th>            <th>设置列表符号</th>            <th>常用属性如下：                <code>none</code>：不显示前面的标识（很常用！）                <code>square</code>:实心方块                <code>disc</code>：圆形                <code>decimal</code>:数字                <code>lower-roman</code>:小写罗马字                <code>upper-roman</code>:大写罗马字                <code>lower-alpha</code>:小写字母                <code>upper-alpha</code>:大写字母</th>     </tr>         <tr>        <th><code>list-style-position</code></th>        <th>设置列表符号的位置</th>        <th><code>inside</code>:在<code>li</code>的里面            <code>outside</code>:在<code>li</code>的外边</th>    </tr>    <tr>        <th><code>list-style-image</code></th>        <th>自定义列表符号</th>        <th><code>url（图片地址）</code></th>    </tr>    <tr>        <th><code>list-style</code></th>        <th>符合属性</th>        <th>没有数量、顺序的要求</th>    </tr>        </table><h1 style="font-size:30px;color:#7DFFB5;font-family:华文楷体">CSS表格属性</h1><p><b>1.边框相关属性（其他元素也能用）：</b></p><table>    <tr>        <th>CSS属性名</th>        <th>功能</th>        <th>属性值</th>    </tr>    <tr>        <td><code>border-width</code></td>        <td>边框宽度</td>        <td><code>CSS</code>中可用的长度值</td>    </tr>    <tr>        <td><code>bordet-color</code></td>        <td>边框颜色</td>        <td><code>CSS</code>中可用的颜色值</td>    </tr>    <tr>        <td><code>border-style</code></td>        <td>边框风格</td>        <td><code>none</code>默认值            <code>solid</code>实线            <code>dashed</code>虚线            <code>dotted</code>点线            <code>double</code>双实线        </td>    </tr>    <tr>        <td><code>border</code></td>        <td>边框复合属性</td>        <td>没有书量、顺序的要求</td>    </tr>    </table><h1 style="font-size:30px;color:#7DFFB5;font-family:华文楷体">表格独有属性（只有<code>table</code>表情才能使用）：</h1><table>    <tr>        <th>CSS属性名</th>        <th>功能</th>        <th>属性值</th>    </tr>    <tr>        <td><code>table-layout</code></td>        <td>设置了列宽度</td>        <td><code>auto</code>:自动，类款根据内容计算（默认值）            <code>fixed</code>:固定列宽，平均分。</td>    </tr>    <tr>        <td><code>borber-spacing</code></td>        <td>单元格间距</td>        <td><code>CSS</code>中可用的长度值。        生效的前提：单元格边框不能合并</td>    </tr>    <tr>        <td><code>borer-collapse</code></td>        <td>合并单元格边框</td>        <td><code>collapse</code>:合并            <code>separate</code>:不合并</td>    </tr>    <tr>        <td><code>empty-cells</code></td>        <td>隐藏没有内容的单元格</td>        <td><code>show</code>:显示，默认            <code>hide</code>:隐藏</td>    </tr>    <tr>        <td><code>caption-side</code></td>        <td>设置表格标题位置</td>        <td><code>top</code>:上面（默认值）            <code>bottom</code>在表格下面</td></table>    <h1 style="font-size:30px;color:#7DFFB5;font-family:华文楷体">CSS背景属性</h1><table>    <tr>        <th>CSS属性名</th>        <th>功能</th>        <th>属性值</th>    </tr>    <tr>        <td><code>background-color</code></td>        <td>设置背景颜色</td>        <td>符合<code>CSS</code>中的颜色规范的值。默认背景颜色是<code>transparent</code>。</td>    </tr>    <tr>        <td><code>background-image</code></td>        <td>设置背景图片</td>        <td><code>url（图片地址）</code></td>    </tr>    <tr>        <td><code>background-repeat</code></td>        <td>设置背景重复方式</td>        <td><code>repeat</code>:重复，铺满整个元素，默认值<code>repeat-x</code>只在水平方向重复。<code>repeat-y</code>只在垂直方向重复<code>no-repeat</code>:不重复。</td>    </tr>    <tr>        <td><code>background-position</code></td>        <td>设置背景图位置</td>        <td><b>通过关键字设置位置</b>：写两个值，用空格隔开。 水平：<code>left、center、right、</code>垂直：<code>top、center、bottom</code>如果只取一个值，另一个方向的值取center            <b>通过长度指定坐标位置</b>:以元素左上角，为坐标原点，设置图标左上角位置。俩个值，分别是<code>x,y坐标。</code>只写一个值，会被当做x坐标，y坐标取center</td>    </tr>    <tr>        <td><code>background</code></td>        <td>符合属性</td>        <td>没有数量和顺序要求</td>    </tr>    </table> <h1 style="font-size:30px;color:#7DFFB5;font-family:华文楷体">CSS鼠标属性</h1><table>    <tr>        <th>CSS属性名</th>        <th>功能</th>        <th>属性值</th>    </tr>    <tr>        <td><code>cursor</code></td>        <td>设置鼠标光标的样式</td>        <td><code>pointer</code>:小手        <code>move</code>:移动图标        <code>text</code>:文字选择器        <code>crosshair</code>:十字架        <code>wait</code>:等待        <code>hrlp</code>:帮助</td>    </tr>    </table>        ]]></content>
+      
+      
+      <categories>
+          
+          <category> CSS基础 </category>
+          
+          <category> Visual Studio Code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学习CSS.3学习笔记</title>
       <link href="/2025/01/17/css/%E5%AD%A6%E4%B9%A0css.3/"/>
       <url>/2025/01/17/css/%E5%AD%A6%E4%B9%A0css.3/</url>
