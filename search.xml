@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>学习CSS.10学习笔记</title>
+      <link href="/2025/01/22/css/%E5%AD%A6%E4%B9%A0css.10/"/>
+      <url>/2025/01/22/css/%E5%AD%A6%E4%B9%A0css.10/</url>
+      
+        <content type="html"><![CDATA[<h1 style="font-size:30px;color:#3A4973;font-family:华文行楷">CSS 2D</h1><p>CSS 2D 是指使用 CSS 实现的二维变换，它允许开发者对 HTML 元素进行平面内的各种变换操作，从而实现丰富的页面效果。以下是更详细的解释：</p><p style="font-weight:bold;font-size:20px">一、基本变换函数</p><p><b>translate(x, y)：</b></p><li>功能：将元素在二维平面上进行平移。</li><li>参数：</li><br><p>1.x：元素在水平方向（X 轴）上的移动距离。可以是像素值（如 50px）、百分比（如 50%）或其他长度单位。正值表示向右移动，负值表示向左移动。</p><p>2.y：元素在垂直方向（Y 轴）上的移动距离。可以是像素值、百分比或其他长度单位。正值表示向下移动，负值表示向上移动。</p><li>示例：</li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">100px</span>, <span class="number">50px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>说明：上述代码会将 .element 类的元素在水平方向向右移动 100 像素，在垂直方向向下移动 50 像素。</p></blockquote><p><b>rotate(angle)：</b></p><li>功能：将元素绕其中心点旋转一定角度。</li><li>参数：</li><br><p>angle：旋转的角度，单位是度（deg）。正值表示顺时针旋转，负值表示逆时针旋转。</p><li>示例：</li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>说明：该代码将 .element 类的元素顺时针旋转 45 度。</p></blockquote><p><b>scale(x, y)：</b></p><li>功能：对元素进行缩放操作。</li><li>参数：</li><br><p>x：元素在水平方向（X 轴）上的缩放比例。可以是小数（如 0.5 表示缩小到原来的 50%）或大于 1 的数（如 2 表示放大到原来的 2 倍）。<br>y：元素在垂直方向（Y 轴）上的缩放比例。如果不指定 y 值，元素将在 X 和 Y 轴上按照 x 的比例进行缩放。</p><li>示例：</li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.5</span>, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>说明：此代码将 .element 类的元素在水平方向放大到原来的 1.5 倍，在垂直方向放大到原来的 2 倍。</p></blockquote><p><b>skew(x-angle, y-angle)：</b></p><li>功能：使元素在二维平面上产生倾斜效果。</li><li>参数：</li><br><p>x-angle：元素在水平方向（X 轴）上的倾斜角度，单位是度（deg）。正值表示向右侧倾斜，负值表示向左侧倾斜。<br>y-angle：元素在垂直方向（Y 轴）上的倾斜角度，单位是度（deg）。正值表示向下方倾斜，负值表示向上方倾斜。</p><li>示例：</li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">skew</span>(<span class="number">30deg</span>, <span class="number">10deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>说明：.element 类的元素将在水平方向倾斜 30 度，在垂直方向倾斜 10 度。</p></blockquote><p style="font-weight:bold;font-size:20px">二、transform-origin 属性</p><li>功能：设置元素变换的原点位置，默认是元素的中心（50% 50%）。</li><li>参数：</li><br><p>可以使用长度单位（如 px）、百分比或关键字（如 top、bottom、left、right、center）来指定位置。</p><li>示例：</li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">transform-origin</span>: top left;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>说明：对于 .element 类的元素，首先将变换原点设置为左上角，然后进行 45 度的旋转操作。由于变换原点改变，元素将以左上角为中心进行旋转。</p></blockquote><p style="font-weight:bold;font-size:20px">三、组合使用变换函数</p><li>可以将多个变换函数组合使用，它们会按照顺序依次对元素进行操作。</li><li>示例：</li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">100px</span>, <span class="number">50px</span>) <span class="built_in">rotate</span>(<span class="number">45deg</span>) <span class="built_in">scale</span>(<span class="number">1.5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>说明：对于 .element 类的元素，先将其向右平移 100 像素、向下平移 50 像素，然后顺时针旋转 45 度，最后将其放大到原来的 1.5 倍。</p></blockquote><h1 style="font-size:30px;color:#3A4973;font-family:华文行楷">应用场景</h1><p><b>动态效果增强</b></p><li>动画效果：通过 CSS 2D 变换可以创建各种吸引人的动画效果，如元素在页面上的平滑移动、旋转、缩放等，使页面更具吸引力。</li><li>交互效果：为按钮、链接、图标等添加点击、悬停等交互效果，当用户与页面元素交互时，通过 2D 变换来改变元素的外观，使页面更加生动有趣。</li><p><b>布局调整</b></p><li>响应式设计：在响应式布局中，利用 CSS 2D 变换调整元素的位置和大小，以适应不同屏幕尺寸和分辨率的设备，确保页面在各种设备上都能保持良好的显示效果。</li><li>创意布局：实现一些非传统的布局方式，如倾斜的文本、旋转的图片等，为页面带来独特的视觉风格，突破传统矩形布局的限制。</li><b>UI 元素设计</b><li>按钮和图标：为按钮和图标添加阴影、立体效果等，使用 CSS 2D 变换可以让它们看起来更加立体和吸引人，增强用户对可交互元素的感知。</li><li>导航菜单：创建具有动态效果的导航菜单，如悬停时弹出的下拉菜单、旋转的选项卡等，提升导航的易用性和视觉效果。</li><b>兼容性</b><li>虽然大多数现代浏览器都支持 CSS 2D 变换，但在一些较旧的浏览器或特定版本中可能存在兼容性问题。为了确保兼容性，可能需要使用浏览器前缀（如 -webkit-、-moz- 等），也可以使用工具如 Autoprefixer 来自动添加这些前缀。</li>]]></content>
+      
+      
+      <categories>
+          
+          <category> CSS基础 </category>
+          
+          <category> Visual Studio Code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学习CSS.9学习笔记</title>
       <link href="/2025/01/22/css/%E5%AD%A6%E4%B9%A0css.9/"/>
       <url>/2025/01/22/css/%E5%AD%A6%E4%B9%A0css.9/</url>
