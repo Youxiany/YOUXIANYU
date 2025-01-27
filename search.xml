@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Csharp 匿名类型</title>
+      <link href="/2025/01/27/cshrap%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/csharp%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2025/01/27/cshrap%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/csharp%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="匿名类型"><a href="#匿名类型" class="headerlink" title="匿名类型"></a>匿名类型</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><code>在 C# 中，匿名类型是一种可以在不定义具体类型（如类）的情况下创建对象的方式。匿名类型提供了一种便捷的方法来封装一组只读属性，通常用于临时的数据存储和传递。</code></p><p><b>匿名类型的实例是由编译器自动生成的类型，其类型名对于开发者是不可见的。例如：</b></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> &#123; Name = <span class="string">&quot;John&quot;</span>, Age = <span class="number">30</span> &#125;;</span><br></pre></td></tr></table></figure><blockquote><p>这里创建了一个匿名类型的对象person，它有两个属性Name和Age。var关键字让编译器根据初始化表达式来推断变量<br>的类型。</p></blockquote><p><b>属性访问</b></p><p><b>可以通过对象实例来访问其属性。例如，对于上面的person对象，可以这样访问属性：</b></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(person.Name); </span><br><span class="line">Console.WriteLine(person.Age);</span><br></pre></td></tr></table></figure><p><b>由于匿名类型的属性是只读的，不能对其进行重新赋值。例如，下面的代码是错误的：</b></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person.Name = <span class="string">&quot;Jane&quot;</span>; <span class="comment">// 编译错误，因为匿名类型的属性是只读的</span></span><br></pre></td></tr></table></figure><h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p><code>LINQ 查询结果的临时存储：在 LINQ（Language - Integrated Query）中，经常会使用匿名类型来存储查询结果。例如，假设有一个List&lt;int&gt;类型的列表numbers，要获取其中每个数字的平方和立方并存储为一个新的对象集合，可以这样做：</code></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="keyword">from</span> n <span class="keyword">in</span> numbers</span><br><span class="line">             <span class="keyword">select</span> <span class="keyword">new</span> &#123; Square = n * n, Cube = n * n * n &#125;;</span><br></pre></td></tr></table></figure><blockquote><p>这里result是一个包含匿名类型对象的集合，每个对象都有Square和Cube两个属性，分别存储数字的平方和立方。</p></blockquote><p><code>作为方法返回值的临时类型：当需要从一个方法返回一组简单的数据，但又不想专门为此定义一个类时，可以使用匿名类型。例如：</code></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">object</span> <span class="title">GetData</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> &#123; Message = <span class="string">&quot;Success&quot;</span>, StatusCode = <span class="number">200</span> &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>调用GetData方法时，会返回一个匿名类型的对象，包含Message和StatusCode两个属性。</p></blockquote><h2 id="匿名类型的限制"><a href="#匿名类型的限制" class="headerlink" title="匿名类型的限制"></a>匿名类型的限制</h2><p><code>不能跨方法共享：因为匿名类型是由编译器在编译时生成的临时类型，其类型定义只在定义它的方法内部有效。如果要在多个方法之间传递数据，最好使用自定义的类或结构。</code></p><p><code>缺少类型名称：由于没有明确的类型名称，不能将匿名类型用作方法参数的类型声明（除非使用object等更通用的类型来接收），也不能用于继承等面向对象的高级特性。例如，不能这样定义一个方法：</code></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ProcessData</span>(<span class="params"><span class="keyword">new</span> &#123; Name = <span class="string">&quot;&quot;</span>, Age = <span class="number">0</span> &#125;</span>) <span class="comment">// 编译错误，不能使用匿名类型作为参数类型</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Csharp编程基础 </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Visual Studio 2022 </tag>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Csharp 构造函数的使用，this关键字</title>
       <link href="/2025/01/27/cshrap%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/csharp%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%8Cthis%E5%85%B3%E9%94%AE%E5%AD%97/"/>
       <url>/2025/01/27/cshrap%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/csharp%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%8Cthis%E5%85%B3%E9%94%AE%E5%AD%97/</url>
@@ -1471,25 +1500,6 @@
     
     
     <entry>
-      <title>日常</title>
-      <link href="/2024/10/30/YOUXIANDEYU/"/>
-      <url>/2024/10/30/YOUXIANDEYU/</url>
-      
-        <content type="html"><![CDATA[<h1 id="博主的随心日常"><a href="#博主的随心日常" class="headerlink" title="博主的随心日常"></a></b><em>博主的随心日常</em></b></h1><h2 id="2024年"><a href="#2024年" class="headerlink" title="2024年"></a>2024年</h2><h3 id="11月1日"><a href="#11月1日" class="headerlink" title="11月1日"></a>11月1日</h3><!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px">    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113316101884629&bvid=BV1TRmAYSE94&cid=26314608616&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div> --><blockquote><p>今天明日方舟更新5.5周年了（有没有和博主玩一样的游戏啊），攒了70抽开开心心上线抽卡，出了俩个金，歪了个叔叔潜能+1。给我出个没有的都好啊！<br>说说我对这游戏的评价吧，21年那会儿我是被同学带入坑的那时第一次接触这种类型的游戏感觉很好玩很新颖，后面也玩过很多这种类型的二游但还是明日方舟更好，尽管现在不怎么玩了。<br>可能是新鲜感过了吧。关卡出的没意思，抽卡一直是非酋。如今每天上线就是刷体力完成每日就下了。<br>现在唯一好玩的的就是它出的危机合约了。🥱🥱🥱</p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113407286052207&bvid=BV1NgSRYbEAQ&cid=26564363331&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div><blockquote><p>新出的塑心皮肤还是很好看的。喜欢😍😍😍</p></blockquote><p><img src="/img/youxin/%E5%A1%91%E5%BF%83.jpg"><br><img src="/img/youxin/%E5%A1%91%E5%BF%831.jpg"></p><h3 id="11月3日"><a href="#11月3日" class="headerlink" title="11月3日"></a>11月3日</h3><blockquote><p>看完CS,2024BLAST全球总决赛。<br>恭喜G2夺冠</p></blockquote><p><img src="/img/youxin/G2.jpg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日记 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>AE素材获取</title>
       <link href="/2024/10/30/AE%E7%B4%A0%E6%9D%90%E6%8F%90%E7%BA%AF/"/>
       <url>/2024/10/30/AE%E7%B4%A0%E6%9D%90%E6%8F%90%E7%BA%AF/</url>
@@ -1511,6 +1521,25 @@
             <tag> 迅雷 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日常</title>
+      <link href="/2024/10/30/YOUXIANDEYU/"/>
+      <url>/2024/10/30/YOUXIANDEYU/</url>
+      
+        <content type="html"><![CDATA[<h1 id="博主的随心日常"><a href="#博主的随心日常" class="headerlink" title="博主的随心日常"></a></b><em>博主的随心日常</em></b></h1><h2 id="2024年"><a href="#2024年" class="headerlink" title="2024年"></a>2024年</h2><h3 id="11月1日"><a href="#11月1日" class="headerlink" title="11月1日"></a>11月1日</h3><!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px">    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113316101884629&bvid=BV1TRmAYSE94&cid=26314608616&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div> --><blockquote><p>今天明日方舟更新5.5周年了（有没有和博主玩一样的游戏啊），攒了70抽开开心心上线抽卡，出了俩个金，歪了个叔叔潜能+1。给我出个没有的都好啊！<br>说说我对这游戏的评价吧，21年那会儿我是被同学带入坑的那时第一次接触这种类型的游戏感觉很好玩很新颖，后面也玩过很多这种类型的二游但还是明日方舟更好，尽管现在不怎么玩了。<br>可能是新鲜感过了吧。关卡出的没意思，抽卡一直是非酋。如今每天上线就是刷体力完成每日就下了。<br>现在唯一好玩的的就是它出的危机合约了。🥱🥱🥱</p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;border-radius: 12px"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113407286052207&bvid=BV1NgSRYbEAQ&cid=26564363331&p=1" page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 80%; width: 100%;border-radius: 12px"> </iframe></div><blockquote><p>新出的塑心皮肤还是很好看的。喜欢😍😍😍</p></blockquote><p><img src="/img/youxin/%E5%A1%91%E5%BF%83.jpg"><br><img src="/img/youxin/%E5%A1%91%E5%BF%831.jpg"></p><h3 id="11月3日"><a href="#11月3日" class="headerlink" title="11月3日"></a>11月3日</h3><blockquote><p>看完CS,2024BLAST全球总决赛。<br>恭喜G2夺冠</p></blockquote><p><img src="/img/youxin/G2.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日记 </category>
+          
+      </categories>
+      
       
     </entry>
     
