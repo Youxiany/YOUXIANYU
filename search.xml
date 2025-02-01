@@ -13,9 +13,9 @@
       
       <categories>
           
-          <category> .NET8 </category>
+          <category> .NET </category>
           
-          <category> WPFUI </category>
+          <category> WPF </category>
           
           <category> XAML </category>
           
