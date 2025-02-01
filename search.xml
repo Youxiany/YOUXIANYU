@@ -13,11 +13,11 @@
       
       <categories>
           
-          <category> .net </category>
+          <category> .NET8 </category>
           
-          <category> wpf </category>
+          <category> WPFUI </category>
           
-          <category> xaml </category>
+          <category> XAML </category>
           
           <category> Visual Studio 2022 </category>
           
