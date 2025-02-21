@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Lambda表达式</title>
+      <link href="/2025/02/21/csharp%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/Lambda%E6%96%B9%E6%B3%95/"/>
+      <url>/2025/02/21/csharp%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/Lambda%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何给Lambda赋值给委托"><a href="#如何给Lambda赋值给委托" class="headerlink" title="如何给Lambda赋值给委托"></a>如何给Lambda赋值给委托</h1><p>在 C# 中，Lambda表达式（也称为 匿名方法、局部函数 或 函数表达式）是一种简洁的方式来定义和调用小型函数。它允许你在代码中直接嵌入简单的函数逻辑，而无需显式地声明完整的函数。</p><p><img src="/img%5CHello%5CSnipaste_2025-02-21_16-18-05.png"></p><p><img src="/img%5CHello%5CSnipaste_2025-02-21_16-24-23.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Csharp编程基础 </category>
+          
+          <category> Visual Studio 2022 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Visual Studio 2022 </tag>
+            
+            <tag> charp编程基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>泛型，partial类，枚举，结构</title>
       <link href="/2025/02/21/csharp%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/%E6%B3%9B%E5%9E%8B%EF%BC%8Cpartial%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE%EF%BC%8C%E7%BB%93%E6%9E%84/"/>
       <url>/2025/02/21/csharp%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/%E6%B3%9B%E5%9E%8B%EF%BC%8Cpartial%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE%EF%BC%8C%E7%BB%93%E6%9E%84/</url>
