@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>JavaScript基础</title>
+      <title>JavaScript基础阶段一</title>
       <link href="/2025/02/27/JavaScript/Js%E7%AE%80%E4%BB%8B%20/"/>
       <url>/2025/02/27/JavaScript/Js%E7%AE%80%E4%BB%8B%20/</url>
       
-        <content type="html"><![CDATA[<h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="JavaScript（是什么？）"><a href="#JavaScript（是什么？）" class="headerlink" title="JavaScript（是什么？）"></a>JavaScript（是什么？）</h2><p>是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。</p><h2 id="作用（做什么？）"><a href="#作用（做什么？）" class="headerlink" title="作用（做什么？）"></a>作用（做什么？）</h2><p>—— 网页特效（监听用户的一些行为让网页作出对应的发馈）<br>—— 表单验证（针对表单数据的合法性进行判断）<br>—— 数据交互（获取后台的数据，渲染到前端）</p><h2 id="js初体验"><a href="#js初体验" class="headerlink" title="js初体验"></a>js初体验</h2>]]></content>
+        <content type="html"><![CDATA[<h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="JavaScript（是什么？）"><a href="#JavaScript（是什么？）" class="headerlink" title="JavaScript（是什么？）"></a>JavaScript（是什么？）</h2><p>是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。</p><h2 id="作用（做什么？）"><a href="#作用（做什么？）" class="headerlink" title="作用（做什么？）"></a>作用（做什么？）</h2><p>—— 网页特效（监听用户的一些行为让网页作出对应的发馈）<br>—— 表单验证（针对表单数据的合法性进行判断）<br>—— 数据交互（获取后台的数据，渲染到前端）</p><h2 id="js初体验"><a href="#js初体验" class="headerlink" title="js初体验"></a>js初体验</h2><p><img src="/img%5Cjs%5CSnipaste_2025-02-27_18-47-48.png"></p><p><b>JavaScript的书写位置</b></p><blockquote><p>JavaScript可以放在body部分也可以放在head部分</p></blockquote><p><b>外部 JavaScript 的优势</b></p><blockquote><p>在外部文件中放置脚本有如下优势：<br>分离了 HTML 和代码<br>使 HTML 和 JavaScript 更易于阅读和维护<br>已缓存的 JavaScript 文件可加速页面加载</p></blockquote><h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><p>Window.alert(message（返回值）)方法</p><p><b>参数：message</b><br>显示在对话框中的字符串，传入其他类型值，也会转会成字符串</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="title function_">alert</span>(<span class="string">&#x27;Hello workd!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>外部引用</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    <span class="comment">//外部引用</span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./js/My.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure><p>示例</p><p><img src="/img%5Cjs%5CSnipaste_2025-02-27_20-47-30.png"></p><h2 id="JavaScript-显示方案"><a href="#JavaScript-显示方案" class="headerlink" title="JavaScript 显示方案"></a>JavaScript 显示方案</h2><p>JavaScript 能够以不同方式“显示”数据：</p><p>使用 window.alert() 写入警告框<br>使用 document.write() 写入 HTML 输出<br>使用 innerHTML 写入 HTML 元素<br>使用 console.log() 写入浏览器控制台</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">```HTML</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;&#x27;</span>).<span class="property">innerHtml</span>=<span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="JavaScript-关键词"><a href="#JavaScript-关键词" class="headerlink" title="JavaScript 关键词"></a>JavaScript 关键词</h1><p>JavaScript 语句常常通过某个关键词来标识需要执行的 JavaScript 动作。</p><p><img src="/img%5Cjs%5CSnipaste_2025-02-28_12-34-10.png"></p><h1 id="JavaScript-变量"><a href="#JavaScript-变量" class="headerlink" title="JavaScript 变量"></a>JavaScript 变量</h1><ol><li>变量声明<br>在 JavaScript 中，您可以使用 let、const 和 var 关键字来声明变量。</li></ol><p>let: 这是最常见的关键字，用于临时声明变量。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">25</span>; <span class="comment">// 变量 name 是一个字符串类型的值 25</span></span><br></pre></td></tr></table></figure><p>const: 该关键字用于最终声明变量。一旦赋值给 const，您就不能再修改该变量的值。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">PI</span> = <span class="number">3.14159</span>; <span class="comment">// 变量 PI 是一个数字类型的值 3.14159</span></span><br></pre></td></tr></table></figure><p>var: 该关键字用于声明全局变量。不过，由于 var 的使用频率非常高，现在很少使用它。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> greeting = <span class="string">&quot;Hello, World!&quot;</span>; <span class="comment">// 变量 greeting 是一个字符串类型的值 Hello, World!</span></span><br></pre></td></tr></table></figure><ol start="2"><li>变量类型</li></ol><p>JavaScript 不强制指定变量的类型。您可以在声明时直接赋值给变量。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>; <span class="comment">// num 是数字类型</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">&quot;Alice&quot;</span>; <span class="comment">// name 是字符串类型</span></span><br></pre></td></tr></table></figure><p>如果在没有明确类型的情况下，JavaScript 会根据赋值的内容推断变量的类型。</p><ol start="3"><li>变量的作用域<br>全局变量: 使用 let 或 var 声明的变量属于全局作用域。</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 输出是 10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>局部变量: 使用 let 和函数括号 () 声明的变量属于该函数的作用域（局部作用域）。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 输出是 10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>块级变量: 使用 const 声明的变量属于该块级元素的作用域（块级作用域）。</p><ol start="4"><li>变量的赋值</li></ol><p>JavaScript 提供多种方式来赋值给变量：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接赋值</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作数运算符</span></span><br><span class="line"><span class="keyword">let</span> b = a; <span class="comment">// b 和 a 是同一个变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> c = a + <span class="number">5</span>; <span class="comment">// c = 15</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> d = <span class="literal">undefined</span>; <span class="comment">// 变量未被赋值，默认为 `undefined`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> e = <span class="literal">null</span>; <span class="comment">// 特殊情况，表示空对象或空值</span></span><br></pre></td></tr></table></figure><ol start="5"><li>注意事项</li></ol><p>JavaScript 的变量是弱引用，这意味着它们存储的是内存地址，而不是直接的值。如果主线程中的脚本退出，这些变量会丢失。</p><p>使用 let 和 const 声明变量时，默认情况下会在全局作用域或当前块级中声明变量。</p><p>示例代码</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量声明和赋值示例</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">25</span>; <span class="comment">// 全局变量</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PI</span> = <span class="number">3.14159</span>; <span class="comment">// 最终声明变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">example</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> name = <span class="string">&quot;Alice&quot;</span>; <span class="comment">// 局部变量</span></span><br><span class="line">    <span class="keyword">const</span> greeting = <span class="string">&quot;Hello!&quot;</span>; <span class="comment">// 块级常量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">example</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(age); <span class="comment">// 输出：25</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable constant_">PI</span>);   <span class="comment">// 输出：3.14159</span></span><br></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>JavaScript 的变量系统非常灵活，允许您在运行时动态地声明和修改变量。使用 let 和 const 是现代 JavaScript 开发中常用的实践，它们分别用于临时变量和最终声明变量。</p><h2 id="JavaScript-数组"><a href="#JavaScript-数组" class="headerlink" title="JavaScript 数组"></a>JavaScript 数组</h2><h3 id="一、数组的创建与初始化"><a href="#一、数组的创建与初始化" class="headerlink" title="一、数组的创建与初始化"></a>一、数组的创建与初始化</h3><p>空数组<br>初始化一个空数组非常简单，可以通过以下方式：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = []; <span class="comment">// 创建一个空数组</span></span><br></pre></td></tr></table></figure><p>初始化数组</p><p>使用[]构造函数初始化数组：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [](); <span class="comment">// 初始化一个空数组</span></span><br></pre></td></tr></table></figure><p>将多个元素放入数组：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fruits = [<span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;香蕉&#x27;</span>, <span class="string">&#x27;橘子&#x27;</span>]; <span class="comment">// 直接将元素赋值给数组</span></span><br></pre></td></tr></table></figure><p>利用字符串拆分<br>可以通过split()方法将一个字符串按指定分隔符分割成多个元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;one,two,three&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> arr = str.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>); <span class="comment">// 结果：[&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]</span></span><br></pre></td></tr></table></figure><p>推、弹出和删除数组</p><p>使用push()向数组末尾添加元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">push</span>(<span class="string">&#x27;apple&#x27;</span>);</span><br></pre></td></tr></table></figure><p>使用pop()移除并返回数组最后一个元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> lastElement = arr.<span class="title function_">pop</span>(); <span class="comment">// 返回&#x27;apple&#x27;</span></span><br></pre></td></tr></table></figure><p>使用unshift()移除并返回数组第一个元素（只能添加到数组头部）：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> firstElement = arr.<span class="title function_">unshift</span>(<span class="string">&#x27;banana&#x27;</span>); <span class="comment">// 结果：[&#x27;banana&#x27;, &#x27;one&#x27;]</span></span><br></pre></td></tr></table></figure><p>数组长度属性<br>获取或设置数组的长度：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="property">length</span>); <span class="comment">// 输出当前数组长度</span></span><br><span class="line">arr.<span class="property">length</span> = <span class="number">3</span>; <span class="comment">// 将数组长度设为3</span></span><br></pre></td></tr></table></figure><p>处理超出索引范围的情况</p><p>使用arr[undefined]或arr[number outside of bounds]时会返回undefined：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">10</span>]); <span class="comment">// 输出undefined（假设arr有3个元素）</span></span><br></pre></td></tr></table></figure><p>要避免这样的问题，可以使用for…of循环或者检查索引的有效性。</p><h3 id="二、数组的遍历与操作"><a href="#二、数组的遍历与操作" class="headerlink" title="二、数组的遍历与操作"></a>二、数组的遍历与操作</h3><p>使用for…in循环<br>对数组中的每个键进行遍历：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> arr) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key); <span class="comment">// 输出：0, 1, 2等数字索引</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用forEach()方法<br>遍历并执行某个函数操作：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">forEach</span>(<span class="function">(<span class="params">element, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第<span class="subst">$&#123;index&#125;</span>个元素是：<span class="subst">$&#123;element&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>条件遍历与过滤</p><p>使用filter()创建一个新的数组，包含所有符合条件的元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> evenNumbers = arr.<span class="title function_">filter</span>(<span class="function"><span class="params">num</span> =&gt;</span> num % <span class="number">2</span> === <span class="number">0</span>); <span class="comment">// 筛选出偶数</span></span><br></pre></td></tr></table></figure><p>find()和findIndex()方法用于查找满足条件的第一个元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> firstEven = arr.<span class="title function_">find</span>(<span class="function"><span class="params">num</span> =&gt;</span> num % <span class="number">2</span> === <span class="number">0</span>);</span><br></pre></td></tr></table></figure><p>高阶数组操作</p><p>map()：创建一个新数组，将原数组中的每个元素转换成新的形式：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> squaredNumbers = arr.<span class="title function_">map</span>(<span class="function"><span class="params">num</span> =&gt;</span> num * num); <span class="comment">// 筛选出平方后的数</span></span><br></pre></td></tr></table></figure><p>reduce()（或fold）：将数组中的所有元素依次累积，得到一个单一的返回值：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, current</span>) =&gt;</span> acc + current, <span class="number">0</span>);</span><br></pre></td></tr></table></figure><p>遍历索引与值对</p><p>使用indexOf()和lastIndexOf()方法查找特定值的位置：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> index = arr.<span class="title function_">indexOf</span>(<span class="string">&#x27;apple&#x27;</span>); <span class="comment">// 查找第一个出现的&#x27;apple&#x27;</span></span><br><span class="line"><span class="keyword">let</span> lastIndex = arr.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;banana&#x27;</span>); <span class="comment">// 查找最后一个出现的&#x27;banana&#x27;</span></span><br></pre></td></tr></table></figure><h3 id="三、数组的扩展与裁剪"><a href="#三、数组的扩展与裁剪" class="headerlink" title="三、数组的扩展与裁剪"></a>三、数组的扩展与裁剪</h3><p>数组扩展</p><p>使用unshift()将元素添加到数组头部：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">unshift</span>(<span class="string">&#x27;new element&#x27;</span>);</span><br></pre></td></tr></table></figure><p>使用push()或直接赋值的方式在数组末尾增加元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">push</span>(<span class="string">&#x27;add element&#x27;</span>); <span class="comment">// 或者 arr = [1,2,3];</span></span><br></pre></td></tr></table></figure><p>数组裁剪<br>通过截取操作符（…）移除数组中的某些元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> newArr = [...arr, <span class="string">&#x27;a&#x27;</span>, ...arr]; <span class="comment">// 在原数组末尾添加与之相同的元素</span></span><br></pre></td></tr></table></figure><p>删除重复项<br>使用unique()方法去除数组中所有重复的值，保留第一个出现的位置：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> uniqueArray = arr.<span class="title function_">unique</span>(); <span class="comment">// 去除重复项并返回新数组</span></span><br></pre></td></tr></table></figure><h3 id="四、处理特殊情况"><a href="#四、处理特殊情况" class="headerlink" title="四、处理特殊情况"></a>四、处理特殊情况</h3><p>空值和无效索引</p><p>使用hasOwnProperty()检查是否是自己具有的属性，避免访问不存在的元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (arr.<span class="title function_">hasOwnProperty</span>(<span class="string">&#x27;index&#x27;</span>)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用for…of循环遍历数组<br>对数组中的每个元素进行处理，较为简洁和高效的方式：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> element <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(element);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>解决NaN类型的问题<br>遇到无法被转换为数字的字符串时，使用Number()函数或强制类型转换：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="title class_">Number</span>(<span class="string">&#x27;apple&#x27;</span>); <span class="comment">// 结果：NaN（表示无效）</span></span><br></pre></td></tr></table></figure><p>避免数组未初始化问题<br>使用|| null强制进行类型转换和赋值：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> element = <span class="literal">undefined</span> || arr[<span class="literal">undefined</span>] ? <span class="string">&#x27;默认值&#x27;</span> : <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure><h3 id="五、优化与性能考虑"><a href="#五、优化与性能考虑" class="headerlink" title="五、优化与性能考虑"></a>五、优化与性能考虑</h3><p>避免重复计算<br>在频繁操作数组时，尽量提前处理数据或缓存结果，减少不必要的计算。</p><p>使用内置方法代替循环<br>对于需要遍历和操作的情况，优先使用forEach(), map(), filter()等内置方法，这些方法经过优化，比自定义循环更高效。</p><p>避免不必要的数组创建<br>多次使用push()或unshift()会导致多个小数组合并成一个大数组，可以考虑一次性完成所有操作。</p><p>处理多维数组时的性能优化<br>如果频繁操作二维或三维数组，可以尝试将它们转换为单维数组处理，并根据具体需求进行分析和优化。</p><h3 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h3><p>创建与初始化：灵活使用[], push(), unshift()等方法。<br>遍历：利用for…in, forEach(), indexOf(), lastIndexOf()等方法高效处理数组元素。<br>高阶操作：熟练运用map(), filter(), reduce(), find()和findIndex()进行复杂的数据转换与查询。<br>扩展与裁剪：合理使用数组扩展和裁剪方法，避免不必要的重复计算。</p><h2 id="使用-const-关键字声明变量"><a href="#使用-const-关键字声明变量" class="headerlink" title="使用 const 关键字声明变量"></a>使用 const 关键字声明变量</h2><p>使用 const 关键字声明的变量是不可变的，一旦赋值后不能再被修改。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">PI</span> = <span class="number">3.14</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable constant_">PI</span>); <span class="comment">// 输出: 3.14</span></span><br><span class="line"></span><br><span class="line"><span class="variable constant_">PI</span> = <span class="string">&quot;2&quot;</span>; <span class="comment">// 这条语句会报错，因为 `const` ·· declare immutable variable</span></span><br></pre></td></tr></table></figure><p>使用 !+ 运算符和 let 关键字<br>使用 !+ 运算符可以强制变量为数值类型，但仍然可以通过后续赋值来修改其值。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> greeting = !+ <span class="string">&quot;Hello&quot;</span>; <span class="comment">// 将字符串转为数字并存储到 `greeting` 变量中。</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(greeting); <span class="comment">// 输出: 72（&#x27;H&#x27;的ASCII码）</span></span><br><span class="line"></span><br><span class="line">greeting = !+ <span class="string">&quot;World&quot;</span>; <span class="comment">// 可以修改变量值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(greeting); <span class="comment">// 输出: 87</span></span><br></pre></td></tr></table></figure><p>使用 var 关键字<br>使用 var 关键字声明的变量在现代JavaScript中不被推荐，因为它可能导致代码不可变。建议使用 const 或 let。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="variable constant_">PI</span> = <span class="number">3.14</span>; <span class="comment">// 这条语句会报错，因为 `var` declare immutable variable</span></span><br></pre></td></tr></table></figure><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在JavaScript中，“常量”通常指的是使用 const 关键字声明的不可变变量。<br>使用 !+ 运算符可以在当前语境下强制变量为数值类型，但并不阻止后续赋值修改该变量的值。</p><h2 id="js数据类型分为两大类"><a href="#js数据类型分为两大类" class="headerlink" title="js数据类型分为两大类"></a>js数据类型分为两大类</h2><p>Primitive 类型：</p><p>这些是不可变的数据类型，包括：<br>number（数字）<br>string（字符串）<br>boolean（布尔值）<br>null<br>undefined<br>symbol（符号值）<br>map（映射）<br>Object 对象：</p><p>这些是可变的，可以包含属性，并且在运行时可以被修改。构造出来的对象属于这一类。<br>详细说明：<br>Primitive 类型：这些是不可变的值，一旦赋值后无法再改变。例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">5</span>; <span class="comment">// 原始数值类型</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> num); <span class="comment">// 输出: &quot;number&quot;</span></span><br></pre></td></tr></table></figure><p>Object 对象：这些是可以被修改和扩展的对象。例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">obj.<span class="property">name</span> = <span class="string">&quot;John&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">name</span>); <span class="comment">// 输出: &quot;John&quot;</span></span><br></pre></td></tr></table></figure><p>注意事项：<br>null 和 undefined 是两种不同的值，null 表示没有值，而 undefined 表示变量未被赋值。<br>symbol 类型主要用于性能优化和不可变属性的实现。</p><h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p>模板字符串（Template Literals）</p><p>定义：一种语法糖，允许在字符串内直接嵌入表达式或变量，而无需使用拼接符或其他方法手动拼接。<br>语法结构：使用反斜杠\$开始模板字符串，并在其内部插入变量或表达式的计算结果。</p><p>示例：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&quot;Alice&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用模板字符串拼接输出</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Name is <span class="subst">$&#123;name&#125;</span> and age is <span class="subst">$&#123;age&#125;</span>`</span>); <span class="comment">// 输出: Name是Alice，age是30</span></span><br></pre></td></tr></table></figure><p>优势：简化手动拼接字符串的操作，提高代码的简洁性和可读性。</p><p>注意事项：</p><p>反斜杠前面要加反斜杠（如\$）以表示模板字符串开始。<br>忽略符号问题时，记得检查引号和反斜杠是否匹配。</p><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>JavaScript 可以将不同类型的数据相互转换：</p><p>使用 typeof 操作符可以获取变量的类型。<br>使用布尔值 (true&#x2F;false) 可以强制类型转换。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;42&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> str); <span class="comment">// 输出: &quot;string&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str === <span class="number">42</span>); <span class="comment">// 输出: true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = <span class="string">&quot;3.14&quot;</span>; <span class="comment">// 字符串到数字</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num + <span class="string">&quot; + 5 = &quot;</span> + (num + <span class="number">5</span>)); <span class="comment">// 输出: 8.14</span></span><br></pre></td></tr></table></figure><ol start="3"><li>布尔值和 NaN<br>NaN 表示“不是一个数字”，它是一个特殊的数值类型。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">NaN</span>); <span class="comment">// 输出: NaN</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">NaN</span> === <span class="title class_">NaN</span>); <span class="comment">// 输出: false (因为NaN不能比较)</span></span><br></pre></td></tr></table></figure>布尔值 (true&#x2F;false) 是特殊类型的变量，它们是 boolean 类型。</li></ol><p>隐式转换（Implicit Conversion）和显式转换（Explicit Conversion）是JavaScript中处理数据类型时的两种方式。以下是它们的区别及示例：</p><h3 id="隐式转换："><a href="#隐式转换：" class="headerlink" title="隐式转换："></a>隐式转换：</h3><p>定义： 隐式转换是指在编程过程中，不同数据类型的变量或值会自动地转换为相同的数据类型，以便进行运算或操作。<br>例子：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 隐式转换示例 1: 字符串和数字相加</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">&quot;5&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a + <span class="number">3</span>); <span class="comment">// 输出是&quot;8&quot;</span></span><br></pre></td></tr></table></figure><p>这里，“5”被隐式地转换为数字5，然后与3相加。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 隐式转换示例 2: 字符串比较</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="string">&quot;apple&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b &gt; <span class="string">&quot;banana&quot;</span>); <span class="comment">// 输出是false</span></span><br></pre></td></tr></table></figure><p>这里，“apple”被隐式地转换为字符串“apple”，与“banana”进行比较。</p><h3 id="显式转换："><a href="#显式转换：" class="headerlink" title="显式转换："></a>显式转换：</h3><p>定义： 显式转换是指通过特定的函数或运算符将数据从一种类型强制转换到另一种类型。</p><p>示例：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显式转换示例 1: 使用Number()函数将字符串转换为数字</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="string">&quot;7&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Number</span>(c)); <span class="comment">// 输出是7</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显式转换示例 2: 使用强制类型转换运算符++</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+“<span class="number">5</span>”); <span class="comment">// 输出是5</span></span><br><span class="line"><span class="variable constant_">JAVASCRIPT</span></span><br><span class="line"><span class="comment">// 显式转换示例 3: 使用parseInt()将字符串转换为整数</span></span><br><span class="line"><span class="keyword">let</span> d = <span class="string">&quot;10&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="built_in">parseInt</span>(d, <span class="number">10</span>)); <span class="comment">// 输出是10</span></span><br></pre></td></tr></table></figure><p>总结：</p><p>隐式转换在编程过程中自动发生，无需额外的代码。它适用于运算和比较操作。<br>显式转换需要通过特定函数或运算符来完成，可以更精确地控制数据类型，但可能增加代码复杂性。</p>]]></content>
       
       
       <categories>
@@ -612,9 +612,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -641,9 +641,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -670,9 +670,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -699,9 +699,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -728,9 +728,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -757,9 +757,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -786,9 +786,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -815,9 +815,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -844,9 +844,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -873,9 +873,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -902,9 +902,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -931,9 +931,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -960,9 +960,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -989,9 +989,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1018,9 +1018,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1047,9 +1047,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1076,9 +1076,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -1105,9 +1105,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -1134,9 +1134,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -1163,9 +1163,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
