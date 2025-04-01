@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>YOUXIANYU</title><meta name="author" content="YOUXIANYU"><meta name="copyright" content="YOUXIANYU"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="YOUXIANYU的技术博客 - 知不足而奋进，望远山而力行 ❤">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YOUXIANYU">
+<meta property="og:url" content="http://example.com/page/9/index.html">
+<meta property="og:site_name" content="YOUXIANYU">
+<meta property="og:description" content="YOUXIANYU的技术博客 - 知不足而奋进，望远山而力行 ❤">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/c.c.jpg">
+<meta property="article:author" content="YOUXIANYU">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/c.c.jpg"><link rel="shortcut icon" href="/img/c.c.jpg"><link rel="canonical" href="http://example.com/page/9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="https://fonts.font.im/css?family=Didact+Gothic|Fredoka+One" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":256,"position":"top","messagePrev":"温馨提示：该文章自上次更新以来的天数已超过","messageNext":"天，文章内容可能已过时，请慎阅……"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'YOUXIANYU',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-04-01 12:34:54'
+}</script><link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/yozai/dist/Yozai-Bold/result.css'><link rel="stylesheet" href="/css/modify.css"><span id="fps"></span><link rel="stylesheet" href="/css/fps.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body><div id="web_bg" style="background-image: url(https://api.miaomc.cn/image/other/360pic);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/c.c.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">22</div></a></div><div class="menus_items"><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa-solid fa-hard-drive"></i><span> 网盘</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.feijipan.com"><i class="fa-fw fa-solid fa-download"></i><span> 小飞机网盘</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.123pan.com/"><i class="fa-fw fa-solid fa-cloud"></i><span> 123网盘</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.lanzoui.com/"><i class="fa-fw fa-solid fa-cloud"></i><span> 蓝奏云盘</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa-solid fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa-solid fa-file"></i><span> 日志</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/2024/10/30/YOUXIANDEYU/"><i class="fa-fw fa-solid fa-arrows-rotate"></i><span> 更新日志</span></a></li><li><a class="site-page child" href="/2024/10/30/YOUXIANDEYU/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 随心日记</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> 学习笔记</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Csharp%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> C#</span></a></li><li><a class="site-page child" href="/categories/WPF/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> WPF</span></a></li><li><a class="site-page child" href="/categories/.NET%20Core/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> .NET</span></a></li><li><a class="site-page child" href="/categories/AE/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> AE</span></a></li><li><a class="site-page child" href="/categories/HTML%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> HTML</span></a></li><li><a class="site-page child" href="/categories/CSS%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> CSS</span></a></li><li><a class="site-page child" href="/categories/JS/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> JavaScript</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa-solid fa-train"></i><span> 开往</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fa-solid fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YOUXIANYU</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa-solid fa-hard-drive"></i><span> 网盘</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.feijipan.com"><i class="fa-fw fa-solid fa-download"></i><span> 小飞机网盘</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.123pan.com/"><i class="fa-fw fa-solid fa-cloud"></i><span> 123网盘</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.lanzoui.com/"><i class="fa-fw fa-solid fa-cloud"></i><span> 蓝奏云盘</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa-solid fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa-solid fa-file"></i><span> 日志</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/2024/10/30/YOUXIANDEYU/"><i class="fa-fw fa-solid fa-arrows-rotate"></i><span> 更新日志</span></a></li><li><a class="site-page child" href="/2024/10/30/YOUXIANDEYU/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 随心日记</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> 学习笔记</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Csharp%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> C#</span></a></li><li><a class="site-page child" href="/categories/WPF/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> WPF</span></a></li><li><a class="site-page child" href="/categories/.NET%20Core/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> .NET</span></a></li><li><a class="site-page child" href="/categories/AE/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> AE</span></a></li><li><a class="site-page child" href="/categories/HTML%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> HTML</span></a></li><li><a class="site-page child" href="/categories/CSS%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> CSS</span></a></li><li><a class="site-page child" href="/categories/JS/"><i class="fa-fw fa-sharp fa-solid fa-code"></i><span> JavaScript</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa-solid fa-train"></i><span> 开往</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fa-solid fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">YOUXIANYU</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/10/29/%E6%BC%AB%E5%89%AA/" title="如何安装Adobe AfterEffects 2022"><img class="post-bg" src="/img/one.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何安装Adobe AfterEffects 2022"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/10/29/%E6%BC%AB%E5%89%AA/" title="如何安装Adobe AfterEffects 2022">如何安装Adobe AfterEffects 2022</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-29T14:47:33.000Z" title="发表于 2024-10-29 22:47:33">2024-10-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AE/">AE</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2024/10/29/%E6%BC%AB%E5%89%AA/#post-comment"><span class="waline-comment-count" data-path="/2024/10/29/%E6%BC%AB%E5%89%AA/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content"> 这是我第一次写博客,就写一个自己热爱的漫剪。1.所以就从安装Adobe AfterEffects 2022开始，分享一下软件的安装教程吧！后续还会有更多的教程分享！  Adobe AfterEffects 2022 安装教程1.下载安装包 2.首先，你需要到Adobe官网下载安装包，地址为：   https://www.adobe.com/products/aftereffects.html  哈哈，上面是正版Adobe软件，主要是给公司、和团队使用（如果不使用正版懂得懂得😜😜😜）个人使用就用汉化版的就行啦↓https://www.rjctx.com/    1.第一步进入网站，在搜索框里输入Adobe After Efects, 选择你喜欢的版本下载。  温馨提示：版本上的不同软件上会有一定上的区别，还有就是后续的教学会使用到插件如果版本太高或太低就会出现插件上我有的效果你没有和效果不一样。   2.随便选一个你喜欢的方式下载：   ...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/8/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><span class="page-number current">9</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/c.c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YOUXIANYU</div><div class="author-info-description">YOUXIANYU的技术博客 - 知不足而奋进，望远山而力行 ❤</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">22</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/YOUXIANYU"><i class="fab fa-github"></i><span>戳一下</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">倘若“穷途末路”，那就“势如破竹”。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/30/asp.net%20core/%E5%85%B3%E7%B3%BB%E9%85%8D%E7%BD%AE/" title="EF Core关系配置"><img src="/img%5Cyouxin%5Cwpf.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EF Core关系配置"/></a><div class="content"><a class="title" href="/2025/03/30/asp.net%20core/%E5%85%B3%E7%B3%BB%E9%85%8D%E7%BD%AE/" title="EF Core关系配置">EF Core关系配置</a><time datetime="2025-03-29T16:00:00.000Z" title="发表于 2025-03-30 00:00:00">2025-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/28/asp.net%20core/EF%20Core%E5%85%A5%E9%97%A8/" title="EF Core入门"><img src="/img%5Cyouxin%5Cwpf.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EF Core入门"/></a><div class="content"><a class="title" href="/2025/03/28/asp.net%20core/EF%20Core%E5%85%A5%E9%97%A8/" title="EF Core入门">EF Core入门</a><time datetime="2025-03-27T16:00:00.000Z" title="发表于 2025-03-28 00:00:00">2025-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/28/asp.net%20core/EF%20Core%E7%9A%84%E5%AE%9E%E4%BD%93%E7%B1%BB%E9%85%8D%E7%BD%AE/" title="EF Core实体类配置"><img src="/img%5Cyouxin%5Cwpf.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EF Core实体类配置"/></a><div class="content"><a class="title" href="/2025/03/28/asp.net%20core/EF%20Core%E7%9A%84%E5%AE%9E%E4%BD%93%E7%B1%BB%E9%85%8D%E7%BD%AE/" title="EF Core实体类配置">EF Core实体类配置</a><time datetime="2025-03-27T16:00:00.000Z" title="发表于 2025-03-28 00:00:00">2025-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/24/asp.net%20core/%E6%97%A5%E5%BF%97/" title="日志"><img src="/img%5Cyouxin%5Cwpf.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日志"/></a><div class="content"><a class="title" href="/2025/03/24/asp.net%20core/%E6%97%A5%E5%BF%97/" title="日志">日志</a><time datetime="2025-03-23T16:00:00.000Z" title="发表于 2025-03-24 00:00:00">2025-03-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/asp.net%20core/xml/" title="学习XML"><img src="/img%5Cyouxin%5Cxml.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习XML"/></a><div class="content"><a class="title" href="/2025/03/23/asp.net%20core/xml/" title="学习XML">学习XML</a><time datetime="2025-03-22T16:00:00.000Z" title="发表于 2025-03-23 00:00:00">2025-03-23</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>加载中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/NET-Core/"><span class="card-category-list-name">.NET Core</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AE/"><span class="card-category-list-name">AE</span><span class="card-category-list-count">4</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AE/SVFI/"><span class="card-category-list-name">SVFI</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AE/SVFI/Topaz-VideoAIportable/"><span class="card-category-list-name">Topaz VideoAIportable</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AE/SVFI/Topaz-VideoAIportable/Flowframes/"><span class="card-category-list-name">Flowframes</span><span class="card-category-list-count">1</span></a></li></ul></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AE/%E6%8F%92%E4%BB%B6/"><span class="card-category-list-name">插件</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">CSS基础</span><span class="card-category-list-count">15</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS%E5%9F%BA%E7%A1%80/Visual-Studio-Code/"><span class="card-category-list-name">Visual Studio Code</span><span class="card-category-list-count">15</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%AB%98%E5%86%85%E8%81%9A/" style="font-size: 1.1em; color: #999">高内聚</a> <a href="/tags/%E4%BD%8E%E8%80%A6%E5%90%88/" style="font-size: 1.1em; color: #999">低耦合</a> <a href="/tags/ASP-NET-Core/" style="font-size: 1.28em; color: #99a0aa">ASP.NET Core</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 1.32em; color: #99a2ae">面向对象</a> <a href="/tags/HTML/" style="font-size: 1.23em; color: #999ea6">HTML</a> <a href="/tags/Entity-Framework-Core/" style="font-size: 1.19em; color: #999da1">Entity Framework Core</a> <a href="/tags/WPF/" style="font-size: 1.14em; color: #999b9d">WPF</a> <a href="/tags/%E8%BF%85%E9%9B%B7/" style="font-size: 1.1em; color: #999">迅雷</a> <a href="/tags/%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/" style="font-size: 1.1em; color: #999">三层架构</a> <a href="/tags/%E8%9C%9C%E6%9F%91%E8%AE%A1%E5%88%92/" style="font-size: 1.1em; color: #999">蜜柑计划</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 1.41em; color: #99a5b7">Visual Studio Code</a> <a href="/tags/XML/" style="font-size: 1.1em; color: #999">XML</a> <a href="/tags/Visual-Studio-2022/" style="font-size: 1.5em; color: #99a9bf">Visual Studio 2022</a> <a href="/tags/MVC/" style="font-size: 1.1em; color: #999">MVC</a> <a href="/tags/CSS/" style="font-size: 1.37em; color: #99a4b2">CSS</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%E5%AE%B9%E5%99%A8%E4%B8%8E%E8%BD%BD%E4%BD%93/" style="font-size: 1.1em; color: #999">数据交互容器与载体</a> <a href="/tags/charp%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" style="font-size: 1.14em; color: #999b9d">charp编程基础</a> <a href="/tags/Adobe-After-Effects-2022/" style="font-size: 1.1em; color: #999">Adobe After Effects 2022</a> <a href="/tags/MVVM/" style="font-size: 1.1em; color: #999">MVVM</a> <a href="/tags/EF-Core/" style="font-size: 1.19em; color: #999da1">EF Core</a> <a href="/tags/Csharp/" style="font-size: 1.46em; color: #99a7bb">Csharp</a> <a href="/tags/JavaScript/" style="font-size: 1.23em; color: #999ea6">JavaScript</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2025/03/">
+          <span class="card-archive-list-date">三月 2025</span>
+          <span class="card-archive-list-count">14</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2025/02/">
+          <span class="card-archive-list-date">二月 2025</span>
+          <span class="card-archive-list-count">5</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2025/01/">
+          <span class="card-archive-list-date">一月 2025</span>
+          <span class="card-archive-list-count">31</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/12/">
+          <span class="card-archive-list-date">十二月 2024</span>
+          <span class="card-archive-list-count">12</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/11/">
+          <span class="card-archive-list-date">十一月 2024</span>
+          <span class="card-archive-list-count">15</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/10/">
+          <span class="card-archive-list-date">十月 2024</span>
+          <span class="card-archive-list-count">4</span>
+        </a>
+      </li>
+    </ul></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer-left"><div class="footer-title"><span>YOUXIANYU | </span><span class="footer-copyright">&copy;2024 - 2025 By YOUXIANYU</span></div><div class="footer-button"><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/Youxiany"><i class="fab fa-github"></i></a><a title="微博" target="_blank" rel="noopener" href="https://weibo.com/u/7936064867"><i class="fab fa-weibo"></i></a><a title="bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/3546789374330911?spm_id_from=333.1007.0.0"><i class="fab fa-bilibili"></i></a><a title="twitterb" target="_blank" rel="noopener" href="https://arena.5eplay.com/data/player/0405isglxi3n"><i style= "margin-left: 7px;" class="fa-solid fa-gamepad"></i></a><a title="Email" target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook?deeplink=%2fowa%2f0%2f%3fstate%3d1%26redirectTo%3daHR0cHM6Ly9vdXRsb29rLmxpdmUuY29tL21haWwvMC8&amp;sdf=0"><i class="fa-solid fa-envelope"></i></a><a title="douyin" target="_blank" rel="noopener" href="https://www.douyin.com/user/self?from_tab_name=main&amp;showTab=post"><i style= "margin-left: 11px;" class="fa-brands fa-tiktok"></i></a></div><div class="wordcount"></div><span>YOUXIANYU已经写了 105.9k 字，</span><span>好像写完一本 马克·吐温 的 《王子与乞丐》了！ 了啊</span></div><div id="footer-right"><div class="footer-totop"><i class="fas fa-chevron-up" onclick="scrollToTop()"></i></div><div class="footer-info"><p>使用Hexo框架 | 本站基于butterfly主题魔改</p></div><div class="footer-service"><a title="腾讯云" target="_blank" rel="noopener" href="https://cloud.tencent.com"><img alt="腾讯云" src="https://cdn.ichika.cc/typora/202211071552681.png!towebp"/></a><a title="51LA" target="_blank" rel="noopener" href="https://www.51.la"><img alt="51LA" src="https://cdn.ichika.cc/typora/202211071552427.png!towebp"/></a><a title="CC BY-NC-SA 4.0" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img alt="CC BY-NC-SA 4.0" src="https://cdn.ichika.cc/typora/202211071552856.png!towebp"/></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  async function loadWaline () {
+    try {
+      const eleGroup = document.querySelectorAll('#recent-posts .waline-comment-count')
+      const keyArray = Array.from(eleGroup).map(i => i.getAttribute('data-path'))
+
+      const res = await fetch(`https://youxianyu.1251.win/api/comment?type=count&url=${keyArray}`, { method: 'GET' })
+      const result = await res.json()
+      
+      result.data.forEach((count, index) => {
+        eleGroup[index].textContent = count
+      })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  window.pjax ? loadWaline() : window.addEventListener('load', loadWaline)
+})()</script><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["Always be happy. Always be happy.","永远开心，永远快乐。"])
+  } else {
+    document.getElementById("subtitle").textContent = "Always be happy. Always be happy."
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代码]') // replace code      
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'src'
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}"></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暂无评论'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'waline-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getComment = async (ele) => {
+    try {
+      const res = await fetch('https://youxianyu.1251.win/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      btf.saveToLocal.set(keyName, JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray, ele)
+    } catch (err) {
+      console.error(err)
+      ele.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  run(keyName, getComment)
+})</script><script src="/live2d-widget-master/autoload.js"></script><script src="/js/custom.js"></script><script src="/js/fps.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v3.8.2" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://www.jsdelivr.com/" style="margin-inline:5px" data-title="本站使用JsDelivr为静态资源提供CDN加速" title=""><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用双线部署，默认线路托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用双线部署，联通线路托管于Coding" title=""><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&amp;logo=Codio" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20240314" style="margin-inline:5px" data-title="萌ICP备 纯属萌友网站联萌！" title=""><img src="https://img.shields.io/badge/%E8%90%8CICP%E5%A4%87-20240314-fe1384?style-flat&amp;logo=data:image/png;base64,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" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><!-- hexo injector body_end end --></body></html>
