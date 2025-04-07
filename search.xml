@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>ASP.NET Core MVC入门</title>
+      <link href="/2025/04/07/asp.net%20core/ASP.NET%20Core%20MVC%E5%85%A5%E9%97%A8/"/>
+      <url>/2025/04/07/asp.net%20core/ASP.NET%20Core%20MVC%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ASP-NET-Core-MVC介绍"><a href="#ASP-NET-Core-MVC介绍" class="headerlink" title="ASP.NET Core MVC介绍"></a>ASP.NET Core MVC介绍</h1><p>Wbe应用是.NET Core开发中常见的项目类型，无论是网站还是HTTP服务接口，都有提供对外Web访问的能力，而.NET Core中进行Web应用开发的核心底层技术是ASP.NET Core。<br>在ASP.NET Core这个底层基础上，微软开发了ASP.NET Core和ASP.NET Core API这两个框架。随着软件项目复杂度的增加及软件项目分工的细化，前后端分离已经成为主流开发模式，后端开发人员使用ASP.NET Core Web API开发服务接口，界面交互等有前端开发人员使用Vue等前端框架来完成。在ASP.NET Core MVC这种开发模式下，后端开发人员也仍然要编写一部分前端的代码，而在前后端分离的开发模式下，后端开发人员不在需要处理任何界面逻辑，而只是需要编写ASP.NET Core Web API。</p><h2 id="编写第一个MVC程序"><a href="#编写第一个MVC程序" class="headerlink" title="编写第一个MVC程序"></a>编写第一个MVC程序</h2><p>ASP.NET Core MVC采用MVC模式，也就是把页面交互的代码分为模型（model）、视图（view）和控制器（controller）3个部分。视图负责内容的展现，也就用来显示HTML网页；控制器负责处理用户的请求及为视图准备数据；模型负责在视图和控制器之间传递数据。</p><p><img src="/img%5CHello%5CMVC.png"></p><p>在MVC模式中，试听和控制器不直接交换、不互相依赖，彼此之间通过模型进行数据传输。使用MVC模式的优点是视图和控制器降低了耦合，系统的结构更清晰。</p><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>1.控制器由Controller类实现，试图一般是扩展名为cshtml的文件，而模型则是只有属性的普通C#类。</p><p>2.控制器类的名字一般以Controller结尾，并且被放在Controller文件夹下。控制器的名字微控制器的类名去掉Controller。</p><p>3.视图一般被放到Views文件夹下的控制器名字的文件夹下。</p><p>4.视图-&gt;浏览器全提交的请求-&gt;模型-&gt;控制器-&gt;处理-&gt;模型-&gt;视图。渲染：Render。</p><p>下面演示一个在控制器中查询数据，然后把数据传递给视图进行渲染的案例。</p><p>第一步，在Models文件夹下创建一个Preson类，这个类包含代表姓名的Name属性，代表是否为VIP的IsVIP属性，以及代表创建日期的CreatedTime属性。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">record</span> <span class="title">Person</span>(<span class="params"><span class="built_in">string</span> Name,<span class="built_in">bool</span> IsVIP,DateTime CreatedDateTime</span>)</span>;</span><br></pre></td></tr></table></figure><p>第二步，在Controllers文件夹下创建一个继承自Controller类的TestController类。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TestController</span> : <span class="title">Controller</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> IActionResult <span class="title">Demo1</span>() <span class="comment">//Action 方法：操作方法</span></span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//return View();</span></span><br><span class="line">        Person p1=<span class="keyword">new</span> Person(<span class="string">&quot;YOUXIANYU&quot;</span>, <span class="literal">true</span>, DateTime.Now);</span><br><span class="line">        <span class="keyword">return</span> View(p1);    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>控制器中方法的返回值一般是IActionResult类型的，控制器类中被外界直接访问的方法叫作“操作方法”。</p><p>Demo1方法中，我们创建了Person类的对象，并且为了对象的属性赋予了初始值，最后通过return View（mode1）方法告诉框架“请把mode1这个对象传递给与操作方法同名的视图”，因此狂就会把mode1对象传递给名为Demo1.cshtml的视图文件。</p><p>第三步，在Views文件下创建和TestController名称对应的Test文件夹，然后在Test文件夹上右击，选择添加Razor视图-空这个项目模板，文件名填写Demo1.cshtml文件。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@model WebApplication1.Models.Person</span><br><span class="line">&lt;div&gt;姓名：@Model.Name&lt;/div&gt;</span><br><span class="line">&lt;div&gt;是否VIP:@Model.IsVIP&lt;/div&gt;</span><br><span class="line">&lt;div&gt;@Model.CreatedDateTime&lt;/div&gt;</span><br></pre></td></tr></table></figure><p><img src="/img%5CHello%5Clj.png"></p><h3 id="热重载"><a href="#热重载" class="headerlink" title="热重载"></a>热重载</h3><p>在以调试模式运行ASP.NET Core项目的时候，如果我们修改了服务器端的代码，必须终止并重新运行程序，修改后的代码才能生效。再比较复杂的项目中，这样的开发流程非常麻烦，因为我们需要重新打开浏览器、重新执行要测试请求。</p><p>可以用【启动（不调试）】方法运行项目，然后再修改代码后，重新生成解决方案，这样代码就生效了，不需要重启浏览器。不过在这种方式下运行程序，我们无法进行设置断点、查看变量的值等调试操作。</p><p>而.NET6开始，.NET中增加了热重载功能，它允许我们在以调试方式运行程序的时候，也无须重启程序而让修改的代码生效。它的用法很简单，只要在修改完代码以后单击Visual Studio工具栏中的热重载。</p><p>我们也可以单击热重载的下拉列表，勾选【文件保存时热重载】，这样当我们修改完代码并保存文件后，Visual Studio会自动执行热重载，开发就更方便。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> .NET Core </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> EF Core </tag>
+            
+            <tag> ASP.NET Core </tag>
+            
+            <tag> Entity Framework Core </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>EF Core表达式树</title>
       <link href="/2025/04/05/asp.net%20core/EFCore%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91/"/>
       <url>/2025/04/05/asp.net%20core/EFCore%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91/</url>
@@ -978,9 +1007,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1007,9 +1036,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1036,9 +1065,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1065,9 +1094,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1094,9 +1123,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1123,9 +1152,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1152,9 +1181,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1181,9 +1210,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1210,9 +1239,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1239,9 +1268,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1268,9 +1297,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1297,9 +1326,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1326,9 +1355,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1355,9 +1384,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1384,9 +1413,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1413,9 +1442,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> Visual Studio Code </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1442,9 +1471,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1471,9 +1500,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1500,9 +1529,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1529,9 +1558,9 @@
       
         <tags>
             
-            <tag> Visual Studio Code </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> Visual Studio Code </tag>
             
         </tags>
       
@@ -1569,11 +1598,11 @@
     
     
     <entry>
-      <title>Csharp结构体介绍及使用学习笔记</title>
-      <link href="/2024/12/14/csharp%E7%BB%93%E6%9E%84%E4%BD%93/"/>
-      <url>/2024/12/14/csharp%E7%BB%93%E6%9E%84%E4%BD%93/</url>
+      <title>Csharp枚举类型学习笔记</title>
+      <link href="/2024/12/14/csharp%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2024/12/14/csharp%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/</url>
       
-        <content type="html"><![CDATA[<h1 id="Csharp结构体介绍"><a href="#Csharp结构体介绍" class="headerlink" title="Csharp结构体介绍"></a>Csharp结构体介绍</h1><p>1.在C#中，结构体是一种值类型，用于封装少量的数据。结构体使用 struct 关键字定义，并且可以包含数据字段、方法、属性、索引器、运算符重载和构造函数。结构体不能继承其他的结构体或类，也不能被其他结构体或类继承。以下是结构体的一些基本特性：</p><p>2.定义结构体：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Point</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> X;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Y;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="built_in">int</span> x, <span class="built_in">int</span> y</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        X = x;</span><br><span class="line">        Y = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3.实例化结构体：</p><blockquote><p>结构体可以通过直接声明或使用 new 关键字来实例化。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Point p1 = <span class="keyword">new</span> Point();</span><br><span class="line">Point p2 = <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>);</span><br></pre></td></tr></table></figure><p>4.结构体是值类型：</p><blockquote><p>结构体是值类型，所以当它们被赋值给另一个变量时，它们的值会被复制。</p></blockquote><p>5.方法和属性：</p><blockquote><p>结构体可以包含方法和属性，就像类一样。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Rectangle</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Length;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Width;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">double</span> Area</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; <span class="keyword">return</span> Length * Width; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PrintArea</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Area: <span class="subst">&#123;Area&#125;</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>6.运算符重载：</p><blockquote><p>结构体可以重载运算符，以提供自定义的操作。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Vector</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">double</span> X;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">double</span> Y;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Vector <span class="keyword">operator</span> +(Vector a, Vector b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Vector(a.X + b.X, a.Y + b.Y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>7.结构体与类的区别：</p><blockquote><p>结构体是值类型，而类是引用类型。<br>结构体默认继承自 System.ValueType，而类默认继承自 System.Object。<br>结构体不能有析构函数，而类可以。<br>结构体不能实现接口，而类可以。</p></blockquote><p>8.装箱和拆箱：</p><blockquote><p>当结构体被赋值给一个对象类型（比如 object 或接口类型）时，会发生装箱操作，将值类型转换为引用类型。相反的操作称为拆箱。</p></blockquote><blockquote><p>使用结构体时，通常是为了创建轻量级的、不可变的数据结构，或者当你需要确保数据被复制而不是引用时。</p></blockquote><h1 id="Csharp结构体函数"><a href="#Csharp结构体函数" class="headerlink" title="Csharp结构体函数"></a>Csharp结构体函数</h1><p>1.在C#中，结构体（struct）是一种值类型，它可以用来定义轻量级的数据结构。结构体可以包含数据字段、属性、方法和构造函数等。以下是一些关于C#结构体中函数的基本示例：</p><p>2.结构体定义</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Point</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> X &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Y &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="built_in">int</span> x, <span class="built_in">int</span> y</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        X = x;</span><br><span class="line">        Y = y;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PrintCoordinates</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;(<span class="subst">&#123;X&#125;</span>, <span class="subst">&#123;Y&#125;</span>)&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重写ToString方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="built_in">string</span> <span class="title">ToString</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">$&quot;Point(<span class="subst">&#123;X&#125;</span>, <span class="subst">&#123;Y&#125;</span>)&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3.使用结构体</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Point p = <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">p.PrintCoordinates(); <span class="comment">// 输出: (10, 20)</span></span><br><span class="line">Console.WriteLine(p.ToString()); <span class="comment">// 输出: Point(10, 20)</span></span><br></pre></td></tr></table></figure><p>4.结构体与方法</p><blockquote><p>构造函数：用于初始化结构体的字段。<br>方法：可以定义方法来执行特定的操作，比如上面的PrintCoordinates方法。<br>属性：使用get和set块来定义属性，允许外部代码以属性的方式访问结构体的字段。<br>重写方法：可以重写如ToString等方法，以提供结构体的自定义字符串表示。</p></blockquote><p>5.结构体的值类型特性</p><blockquote><p>结构体是值类型，赋值和参数传递时会复制整个结构体。<br>结构体不能被继承，但可以实现接口。<br>结构体默认有Equals、GetHashCode和ToString方法，但通常需要根据需要重写这些方法。</p></blockquote><p>6.结构体与类的区别</p><blockquote><p>类是引用类型，而结构体是值类型。<br>类可以继承其他类，而结构体不能继承其他结构体或类。<br>结构体的字段默认为private，而类的字段默认为private。</p></blockquote><blockquote><p>这些是C#中结构体和函数的基本用法。根据具体需求，你可以在结构体中定义更多复杂的逻辑和方法。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="Csharp枚举类型"><a href="#Csharp枚举类型" class="headerlink" title="Csharp枚举类型"></a>Csharp枚举类型</h1><p>1.C# 中的枚举（Enum）是一种特殊的值类型，它允许你为一组相关的常量定义一个名称。枚举是一种强类型的常量集合，这意味着每个枚举成员都有一个名称和一个底层的整数值。默认情况下，第一个枚举成员的值是0，每个随后的成员的值比前一个成员的值大1。</p><p>2.下面是枚举的一些基本用法：</p><blockquote><p>定义枚举</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> DaysOfWeek</span><br><span class="line">&#123;</span><br><span class="line">    Sunday,</span><br><span class="line">    Monday,</span><br><span class="line">    Tuesday,</span><br><span class="line">    Wednesday,</span><br><span class="line">    Thursday,</span><br><span class="line">    Friday,</span><br><span class="line">    Saturday</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>使用枚举</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DaysOfWeek today = DaysOfWeek.Friday;</span><br><span class="line">Console.WriteLine(today); <span class="comment">// 输出：Friday</span></span><br></pre></td></tr></table></figure><blockquote><p>访问枚举成员的值</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> dayValue = (<span class="built_in">int</span>)today;</span><br><span class="line">Console.WriteLine(dayValue); <span class="comment">// 输出：4</span></span><br></pre></td></tr></table></figure><blockquote><p>枚举的底层类型<br>你可以指定枚举的底层类型，比如 byte、sbyte、short、ushort、int、uint、long 或 ulong。如果不指定，默认是 int。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> DaysOfWeek : <span class="built_in">byte</span></span><br><span class="line">&#123;</span><br><span class="line">    Sunday,</span><br><span class="line">    Monday,</span><br><span class="line">    Tuesday,</span><br><span class="line">    Wednesday,</span><br><span class="line">    Thursday,</span><br><span class="line">    Friday,</span><br><span class="line">    Saturday</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>枚举成员的显式值<br>你也可以为枚举成员指定显式的值。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> DaysOfWeek</span><br><span class="line">&#123;</span><br><span class="line">    Sunday = <span class="number">1</span>,</span><br><span class="line">    Monday = <span class="number">2</span>,</span><br><span class="line">    Tuesday = <span class="number">3</span>,</span><br><span class="line">    Wednesday = <span class="number">4</span>,</span><br><span class="line">    Thursday = <span class="number">5</span>,</span><br><span class="line">    Friday = <span class="number">6</span>,</span><br><span class="line">    Saturday = <span class="number">7</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>枚举与switch语句<br>枚举类型经常与 switch 语句一起使用。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (today)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> DaysOfWeek.Sunday:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Sunday is the first day of the week.&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DaysOfWeek.Monday:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Monday is the second day of the week.&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">// ... 其他情况</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>检查枚举成员是否存在<br>你可以使用 Enum.IsDefined 方法来检查一个值是否是枚举中的一个有效成员。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> isDefined = Enum.IsDefined(<span class="keyword">typeof</span>(DaysOfWeek), <span class="number">8</span>);</span><br><span class="line">Console.WriteLine(isDefined); <span class="comment">// 输出：False</span></span><br></pre></td></tr></table></figure><blockquote><p>枚举是C#中一个非常有用的功能，它可以让你的代码更加清晰和易于维护。</p></blockquote>]]></content>
       
       
       <categories>
@@ -1598,11 +1627,11 @@
     
     
     <entry>
-      <title>Csharp枚举类型学习笔记</title>
-      <link href="/2024/12/14/csharp%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/"/>
-      <url>/2024/12/14/csharp%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/</url>
+      <title>Csharp结构体介绍及使用学习笔记</title>
+      <link href="/2024/12/14/csharp%E7%BB%93%E6%9E%84%E4%BD%93/"/>
+      <url>/2024/12/14/csharp%E7%BB%93%E6%9E%84%E4%BD%93/</url>
       
-        <content type="html"><![CDATA[<h1 id="Csharp枚举类型"><a href="#Csharp枚举类型" class="headerlink" title="Csharp枚举类型"></a>Csharp枚举类型</h1><p>1.C# 中的枚举（Enum）是一种特殊的值类型，它允许你为一组相关的常量定义一个名称。枚举是一种强类型的常量集合，这意味着每个枚举成员都有一个名称和一个底层的整数值。默认情况下，第一个枚举成员的值是0，每个随后的成员的值比前一个成员的值大1。</p><p>2.下面是枚举的一些基本用法：</p><blockquote><p>定义枚举</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> DaysOfWeek</span><br><span class="line">&#123;</span><br><span class="line">    Sunday,</span><br><span class="line">    Monday,</span><br><span class="line">    Tuesday,</span><br><span class="line">    Wednesday,</span><br><span class="line">    Thursday,</span><br><span class="line">    Friday,</span><br><span class="line">    Saturday</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>使用枚举</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DaysOfWeek today = DaysOfWeek.Friday;</span><br><span class="line">Console.WriteLine(today); <span class="comment">// 输出：Friday</span></span><br></pre></td></tr></table></figure><blockquote><p>访问枚举成员的值</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> dayValue = (<span class="built_in">int</span>)today;</span><br><span class="line">Console.WriteLine(dayValue); <span class="comment">// 输出：4</span></span><br></pre></td></tr></table></figure><blockquote><p>枚举的底层类型<br>你可以指定枚举的底层类型，比如 byte、sbyte、short、ushort、int、uint、long 或 ulong。如果不指定，默认是 int。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> DaysOfWeek : <span class="built_in">byte</span></span><br><span class="line">&#123;</span><br><span class="line">    Sunday,</span><br><span class="line">    Monday,</span><br><span class="line">    Tuesday,</span><br><span class="line">    Wednesday,</span><br><span class="line">    Thursday,</span><br><span class="line">    Friday,</span><br><span class="line">    Saturday</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>枚举成员的显式值<br>你也可以为枚举成员指定显式的值。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> DaysOfWeek</span><br><span class="line">&#123;</span><br><span class="line">    Sunday = <span class="number">1</span>,</span><br><span class="line">    Monday = <span class="number">2</span>,</span><br><span class="line">    Tuesday = <span class="number">3</span>,</span><br><span class="line">    Wednesday = <span class="number">4</span>,</span><br><span class="line">    Thursday = <span class="number">5</span>,</span><br><span class="line">    Friday = <span class="number">6</span>,</span><br><span class="line">    Saturday = <span class="number">7</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>枚举与switch语句<br>枚举类型经常与 switch 语句一起使用。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (today)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> DaysOfWeek.Sunday:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Sunday is the first day of the week.&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DaysOfWeek.Monday:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Monday is the second day of the week.&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">// ... 其他情况</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>检查枚举成员是否存在<br>你可以使用 Enum.IsDefined 方法来检查一个值是否是枚举中的一个有效成员。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> isDefined = Enum.IsDefined(<span class="keyword">typeof</span>(DaysOfWeek), <span class="number">8</span>);</span><br><span class="line">Console.WriteLine(isDefined); <span class="comment">// 输出：False</span></span><br></pre></td></tr></table></figure><blockquote><p>枚举是C#中一个非常有用的功能，它可以让你的代码更加清晰和易于维护。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="Csharp结构体介绍"><a href="#Csharp结构体介绍" class="headerlink" title="Csharp结构体介绍"></a>Csharp结构体介绍</h1><p>1.在C#中，结构体是一种值类型，用于封装少量的数据。结构体使用 struct 关键字定义，并且可以包含数据字段、方法、属性、索引器、运算符重载和构造函数。结构体不能继承其他的结构体或类，也不能被其他结构体或类继承。以下是结构体的一些基本特性：</p><p>2.定义结构体：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Point</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> X;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Y;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="built_in">int</span> x, <span class="built_in">int</span> y</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        X = x;</span><br><span class="line">        Y = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3.实例化结构体：</p><blockquote><p>结构体可以通过直接声明或使用 new 关键字来实例化。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Point p1 = <span class="keyword">new</span> Point();</span><br><span class="line">Point p2 = <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>);</span><br></pre></td></tr></table></figure><p>4.结构体是值类型：</p><blockquote><p>结构体是值类型，所以当它们被赋值给另一个变量时，它们的值会被复制。</p></blockquote><p>5.方法和属性：</p><blockquote><p>结构体可以包含方法和属性，就像类一样。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Rectangle</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Length;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Width;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">double</span> Area</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; <span class="keyword">return</span> Length * Width; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PrintArea</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Area: <span class="subst">&#123;Area&#125;</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>6.运算符重载：</p><blockquote><p>结构体可以重载运算符，以提供自定义的操作。</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Vector</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">double</span> X;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">double</span> Y;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Vector <span class="keyword">operator</span> +(Vector a, Vector b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Vector(a.X + b.X, a.Y + b.Y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>7.结构体与类的区别：</p><blockquote><p>结构体是值类型，而类是引用类型。<br>结构体默认继承自 System.ValueType，而类默认继承自 System.Object。<br>结构体不能有析构函数，而类可以。<br>结构体不能实现接口，而类可以。</p></blockquote><p>8.装箱和拆箱：</p><blockquote><p>当结构体被赋值给一个对象类型（比如 object 或接口类型）时，会发生装箱操作，将值类型转换为引用类型。相反的操作称为拆箱。</p></blockquote><blockquote><p>使用结构体时，通常是为了创建轻量级的、不可变的数据结构，或者当你需要确保数据被复制而不是引用时。</p></blockquote><h1 id="Csharp结构体函数"><a href="#Csharp结构体函数" class="headerlink" title="Csharp结构体函数"></a>Csharp结构体函数</h1><p>1.在C#中，结构体（struct）是一种值类型，它可以用来定义轻量级的数据结构。结构体可以包含数据字段、属性、方法和构造函数等。以下是一些关于C#结构体中函数的基本示例：</p><p>2.结构体定义</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Point</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> X &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Y &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="built_in">int</span> x, <span class="built_in">int</span> y</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        X = x;</span><br><span class="line">        Y = y;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PrintCoordinates</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;(<span class="subst">&#123;X&#125;</span>, <span class="subst">&#123;Y&#125;</span>)&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重写ToString方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="built_in">string</span> <span class="title">ToString</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">$&quot;Point(<span class="subst">&#123;X&#125;</span>, <span class="subst">&#123;Y&#125;</span>)&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3.使用结构体</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Point p = <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">p.PrintCoordinates(); <span class="comment">// 输出: (10, 20)</span></span><br><span class="line">Console.WriteLine(p.ToString()); <span class="comment">// 输出: Point(10, 20)</span></span><br></pre></td></tr></table></figure><p>4.结构体与方法</p><blockquote><p>构造函数：用于初始化结构体的字段。<br>方法：可以定义方法来执行特定的操作，比如上面的PrintCoordinates方法。<br>属性：使用get和set块来定义属性，允许外部代码以属性的方式访问结构体的字段。<br>重写方法：可以重写如ToString等方法，以提供结构体的自定义字符串表示。</p></blockquote><p>5.结构体的值类型特性</p><blockquote><p>结构体是值类型，赋值和参数传递时会复制整个结构体。<br>结构体不能被继承，但可以实现接口。<br>结构体默认有Equals、GetHashCode和ToString方法，但通常需要根据需要重写这些方法。</p></blockquote><p>6.结构体与类的区别</p><blockquote><p>类是引用类型，而结构体是值类型。<br>类可以继承其他类，而结构体不能继承其他结构体或类。<br>结构体的字段默认为private，而类的字段默认为private。</p></blockquote><blockquote><p>这些是C#中结构体和函数的基本用法。根据具体需求，你可以在结构体中定义更多复杂的逻辑和方法。</p></blockquote>]]></content>
       
       
       <categories>
