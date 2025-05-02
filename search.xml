@@ -4,7 +4,34 @@
   
     
     <entry>
-      <title>ASP.NET Core 托管，数据的校验，SignaLR</title>
+      <title>ASP.NET Core SignaL服务器端消息推送</title>
+      <link href="/2025/05/05/asp.net%20core/ASP.NET%20Core%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B6%E4%B8%89/"/>
+      <url>/2025/05/05/asp.net%20core/ASP.NET%20Core%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B6%E4%B8%89/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> NET </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ASP.NET Core </tag>
+            
+            <tag> Entity Framework Core </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ASP.NET Core 托管，数据的校验</title>
       <link href="/2025/05/02/asp.net%20core/ASP.NET%20Core%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B6%E4%BA%8C/"/>
       <url>/2025/05/02/asp.net%20core/ASP.NET%20Core%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B6%E4%BA%8C/</url>
       
