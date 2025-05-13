@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>ASP.NET Core程序的发布</title>
+      <link href="/2025/05/13/asp.net%20core/ASP.NET%20Core%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8F%91%E5%B8%83/"/>
+      <url>/2025/05/13/asp.net%20core/ASP.NET%20Core%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8F%91%E5%B8%83/</url>
+      
+        <content type="html"><![CDATA[<h1 id="网站发布"><a href="#网站发布" class="headerlink" title="网站发布"></a>网站发布</h1><ol><li>不能直接把bin&#x2F;Debug部署到生产环境的服务器上，性能低。应该创建网站的发布版，用【发布】功能。</li><li>两种部署模式：“框架依赖”和“独立”。两者的优缺点。</li><li>独立模式为什么要选目标操作系统和CUP类型。</li></ol><h3 id="如果你使用-Visual-Studio，可以通过以下步骤发布："><a href="#如果你使用-Visual-Studio，可以通过以下步骤发布：" class="headerlink" title="如果你使用 Visual Studio，可以通过以下步骤发布："></a>如果你使用 Visual Studio，可以通过以下步骤发布：</h3><ol><li><p>在解决方案资源管理器中右键点击项目</p></li><li><p>选择 “发布”<br><img src="/img%5CWEBAPI%5C33.png"></p></li><li><p>选择发布目标（文件夹、IIS、Azure 等）我们这里选择使用文件夹的方式发布。<br><img src="/img%5CWEBAPI%5C34.png"></p></li><li><p>配置发布设置（如目标框架、运行时、是否自包含等）<br><img src="/img%5CWEBAPI%5C35.png"><br><img src="/img%5CWEBAPI%5C36.png"></p></li></ol><p>点击 “发布” 按钮</p><h2 id="框架依赖部署（FDD）"><a href="#框架依赖部署（FDD）" class="headerlink" title="框架依赖部署（FDD）"></a>框架依赖部署（FDD）</h2><p>特点</p><p>依赖共享运行时：应用程序依赖目标环境中已安装的 .NET 运行时（如 .NET 6&#x2F;7&#x2F;8）。</p><p>体积小：发布包仅包含应用代码和第三方依赖（如 NuGet 包），不包含 .NET 运行时，因此包体积小。</p><p>跨平台兼容性：发布包不包含运行时，需确保目标环境的运行时版本与开发环境兼容。</p><p>更新便捷：.NET 运行时由操作系统或管理员统一更新，应用无需包含运行时更新。</p><p>适用场景</p><p>目标环境已预装 .NET 运行时（如服务器、开发机）。</p><p>需要频繁更新应用，希望减小发布包体积。<br>多应用共享同一运行时，节省系统资源。</p><h2 id="独立部署（SCD）"><a href="#独立部署（SCD）" class="headerlink" title="独立部署（SCD）"></a>独立部署（SCD）</h2><p>特点</p><p>包含完整运行时：应用程序包包含 .NET 运行时、框架库和应用代码，不依赖目标环境的运行时。</p><p>体积大：发布包包含完整的运行时，体积显著增大（通常几十到上百 MB）。</p><p>版本隔离：不同应用可使用不同版本的运行时，互不干扰。</p><p>无需预安装运行时：可直接在未安装 .NET 的环境中运行（如客户机、无管理员权限的服务器）。</p><p>适用场景</p><p>目标环境无法安装或管理 .NET 运行时（如客户机、共享主机）。</p><p>需要确保应用使用特定版本的运行时，避免版本冲突。</p><p>应用需要在不同版本的运行时环境中保持一致性。</p><h1 id="网站的运行"><a href="#网站的运行" class="headerlink" title="网站的运行"></a>网站的运行</h1><ol><li>在Windows（SandBox）和Linux（VMWare Player）里分别运行网站。</li><li>如何在生产服务器中部署.NET Core网站。尽管Kestrel已经强大到足以作为一个独立Web服务器被使用了，但是一般仍然不会让Kestrel直接面对终端用户的请求。配置域名证书、记录请求日志、Url重写等由反向代理服务器负责。</li><li>多种部署模式：K8S+容器（推荐，难度高）；Linux+Nginx；云平台；windows+IIS；</li></ol><h1 id="网站安全提醒"><a href="#网站安全提醒" class="headerlink" title="网站安全提醒"></a>网站安全提醒</h1><ol><li>启用https。</li><li>如果运维人员需要通过远程桌面或者SSH连接到服务器，那么一定要在服务器的防火墙设置只允许运维人员的IP段访问相关端口。</li><li>严格区分开发环境和生产环境。</li><li>不要相信客户端请求。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> NET </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ASP.NET Core </tag>
+            
+            <tag> Entity Framework Core </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SignaLR案例：导入英汉词典</title>
       <link href="/2025/05/12/asp.net%20core/SignalR%E6%A1%88%E4%BE%8B/"/>
       <url>/2025/05/12/asp.net%20core/SignalR%E6%A1%88%E4%BE%8B/</url>
