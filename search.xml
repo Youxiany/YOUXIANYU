@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>.NET Core的聚合，MediatR实现领域事件</title>
+      <title>.NET Core的聚合，RabbitMQ实现领域事件</title>
       <link href="/2025/05/23/DDD/EFCore%E9%A2%86%E5%9F%9F%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%90%88%E9%80%82%E6%97%B6%E6%9C%BARabbitMQ%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
       <url>/2025/05/23/DDD/EFCore%E9%A2%86%E5%9F%9F%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%90%88%E9%80%82%E6%97%B6%E6%9C%BARabbitMQ%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
       
