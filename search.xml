@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>及物动词和不及物动词</title>
+      <link href="/2025/08/12/asp.net%20core/%E8%8B%B1%E8%AF%AD/%E5%8F%8A%E7%89%A9%E5%8A%A8%E8%AF%8D%E5%92%8C%E4%B8%8D%E5%8F%8A%E7%89%A9%E5%8A%A8%E8%AF%8D/"/>
+      <url>/2025/08/12/asp.net%20core/%E8%8B%B1%E8%AF%AD/%E5%8F%8A%E7%89%A9%E5%8A%A8%E8%AF%8D%E5%92%8C%E4%B8%8D%E5%8F%8A%E7%89%A9%E5%8A%A8%E8%AF%8D/</url>
+      
+        <content type="html"><![CDATA[<p>及物动词和不及物动词<br>及物动词：触及物体（宾语·）<br>及物动词必须要接宾语！<br>1.eat 吃 I eat a pear.我吃一个梨子。<br>2.watch 观看 I watch TV. 我看电视。<br>3.see看到 He sees a monkey. 他看到一只猴子。</p><p>不及物动词：不触及物体（宾语·），介词（当桥梁）<br>1.look 看 I look at a person. 我看着一个人。<br>2.run 跑 I run on the ground. 我在地上跑。<br>3.sleep 睡觉 Marry sleeps in her bedroom. Marry在卧室睡觉。<br>不及物动词可不接任何成分，单独成句<br>4.die 死亡 He died. 他死了<br>5.win&#x2F;lose 胜利&#x2F;失败 You win&#x2F;lose. 你赢&#x2F;输了<br>6.arrive&#x2F;come&#x2F;go He has arrived&#x2F;come&#x2F;gone 他到了&#x2F;来了&#x2F;走了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> English </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>注册MediatR，添加工作单元过滤器</title>
       <link href="/2025/08/11/asp.net%20core/%E5%AD%A6%E8%8B%B1%E8%AF%AD%E7%BD%91%E7%AB%99%E9%A1%B9%E7%9B%AE/%E6%B3%A8%E5%86%8CMediatR%EF%BC%8C%E6%B7%BB%E5%8A%A0%E5%B7%A5%E4%BD%9C%E5%8D%95%E5%85%83/"/>
       <url>/2025/08/11/asp.net%20core/%E5%AD%A6%E8%8B%B1%E8%AF%AD%E7%BD%91%E7%AB%99%E9%A1%B9%E7%9B%AE/%E6%B3%A8%E5%86%8CMediatR%EF%BC%8C%E6%B7%BB%E5%8A%A0%E5%B7%A5%E4%BD%9C%E5%8D%95%E5%85%83/</url>
