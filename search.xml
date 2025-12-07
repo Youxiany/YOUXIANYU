@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>编程思想2.1</title>
+      <link href="/2025/12/07/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%E9%AB%98%E5%86%85%E8%81%9A%EF%BC%8C%E4%BD%8E%E8%80%A6%E5%90%88/"/>
+      <url>/2025/12/07/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%E9%AB%98%E5%86%85%E8%81%9A%EF%BC%8C%E4%BD%8E%E8%80%A6%E5%90%88/</url>
+      
+        <content type="html"><![CDATA[<h1 id="高内聚"><a href="#高内聚" class="headerlink" title="高内聚"></a>高内聚</h1><blockquote><p>高内聚：模块内部元素具有相同特点的相似程度。<br>高内聚提供了更好的程序可靠性、可读性。</p></blockquote><h2 id="模块"><a href="#模块" class="headerlink" title="模块:"></a>模块:</h2><ol><li><p>什么是模块呢？</p><blockquote><p>小到一个方法、一个接口、一个类，大到一个业务，一个功能。</p></blockquote></li><li><p>模块的四要素：</p><blockquote><p>接口:模块的输入和输出。<br>功能：模块实现了什么功能。<br>逻辑：模块内部如何实现要求的功能，以及所需要的数据。<br>状态：指模块调用与被调用的关系。</p></blockquote></li><li><p>而高内聚就是指模块内的相似程度</p></li></ol><p>举例：</p><p>模块中有：<br>Class:新闻管理 Method:新闻查看、新闻更新、新闻删除<br>Class:用户管理 Method:设置用户名、设置密码、用户注册、用户删除</p><p>这两个例子就是高内聚，新闻类中提供的方法、元素都跟新闻有关，这就是具有相同特点的相似程度符合高内聚的标准。</p><p>低内聚：</p><p>Class:新闻管理 Method:新闻查看、新闻更新、新闻删除,用户注册</p><ol start="4"><li>低内聚会给我们带来什么问题？</li></ol><blockquote><p>低耦合：能不引用绝不引用，宁可间接引用<br>牵一发而动全身</p></blockquote><h1 id="低耦合"><a href="#低耦合" class="headerlink" title="低耦合"></a>低耦合</h1><blockquote><p>指的是模块之间的依赖程度。<br>低耦合提供了更好的程序可扩展性和可复用性。</p></blockquote><p>举例：</p><p>主板&amp;显卡<br>显卡不依赖于某一款主板  低耦合<br>显卡必须依赖莫一款主板  高耦合</p><p>男&amp;女<br>恋爱前，男和女互相不依赖  低耦合<br>恋爱后，男和女相互依赖    高耦合</p><p>再比如：</p><p><img src="/img%5C%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%5C4.png"></p><p>这也是低耦合，电源插座等，没有固定必须插什么牌子的插口，随机应变，这就是低耦合。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> NET </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ASP.NET Core </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>编程思想1.1</title>
       <link href="/2025/12/06/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/"/>
       <url>/2025/12/06/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/</url>
